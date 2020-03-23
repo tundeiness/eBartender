@@ -13,8 +13,6 @@ module Api
         end
       end
 
-
-
       def create
         fav = current_user.favourite_cocktails.new(favourite_params)
         if fav.save!
@@ -23,8 +21,6 @@ module Api
           render json: 'can\'t create', status: 500
         end
       end
-
-
 
       def destroy
         @favouritecocktail = current_user.favourite_cocktails.find_by(cocktail_id: params[:id])
