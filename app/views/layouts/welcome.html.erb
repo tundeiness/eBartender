@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EBartender</title>
+    <title>eBartender</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
+</html>
 
 <body>
     <% if !user_signed_in? %>
@@ -26,8 +28,8 @@
             </nav>
         </header>
         <%= yield %>
+
+
     </main>
     <% end %>
 </body>
-
-</html>
