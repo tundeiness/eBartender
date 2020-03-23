@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'landing/index'
   # get '/app', to: 'landing#app', as: 'app'
   # For details on the DSL available within this file, see
