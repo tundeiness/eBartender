@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'Validation tests' do
+  context 'validation tests' do
     let(:user) { build(:user) }
     let(:cocktail) { build(:cocktail) }
 
