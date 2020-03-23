@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import styling from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import img from '../assets/images/kim-daniels-0eNtGDz8Ols-unsplash.jpg';
-import logo from '../assets/images/logo.png';
+
 
 
 const Div = styling.div`
- background-image: url(${img});
+ background-image: url('https://user-images.githubusercontent.com/25479050/76873043-87f62180-686d-11ea-929c-542c5a0f2f6d.jpg');
  height: 100%;
  background-position: center;
  background-repeat: no-repeat;
@@ -85,7 +84,7 @@ const Home = () => (
         <div id="left" />
         <div className="d-flex flex-column" id="footer-matter">
           <div id="footer-logo">
-            <img height="50px" src={logo} alt="brand-logo" />
+            <img height="50px" src={'https://user-images.githubusercontent.com/25479050/76873102-9e03e200-686d-11ea-9ff5-a928ff9cc97d.png'} alt="brand-logo" />
           </div>
           <div id="address">
             <p>
