@@ -13,10 +13,11 @@
 </head>
 
 <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-
+    <div class='app-wrapper d-flex flex-column justify-content-center'>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+    </div>
 </body>
 
 </html>
