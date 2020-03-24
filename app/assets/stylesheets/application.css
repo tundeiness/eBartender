@@ -17,8 +17,8 @@
  *= require_self
  */
 
- @import 'bootstrap/dist/css/bootstrap';
- @import "font-awesome";
+ /* @import 'bootstrap/dist/css/bootstrap';
+ @import "font-awesome"; */
 
 
  /* SIGNUP */
@@ -34,17 +34,21 @@
 
 .subhead{
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: light;
   margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 
 .heading{
  color: #000;
- line-height: 16px;
+ line-height: 1.5;
  font-weight: bold;
- font-family: 'Source Sans Pro', sans-serif;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 1.5rem;
+ letter-spacing: .4rem;
+
 }
 
 footer{
@@ -53,22 +57,19 @@ footer{
 
 /* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext'); */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap'); */
 
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Source Sans Pro', sans-serif; */
@@ -101,8 +102,58 @@ font-family: 'Source Sans Pro', sans-serif; */
   text-decoration: none;
 }
 
+.login{
+  background-color: transparent !important;
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+button.login > a {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
+.login:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-up{
+    background-color:#eb5537 !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none !important;
+    line-height: 1.5;
+    border-radius: 1rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+
+button.sign-up > a{
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  padding-left: .8rem;
+  padding-right: .8rem;
+}
+
+.sign-up:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 a{
-  display: inline-block;
+  /* display: inline-block;
   text-transform: capitalize !important;
   color: white !important;
   font-size: .8rem;
@@ -110,20 +161,19 @@ a{
   margin-right: 1rem;
   margin-top: 1rem;
   padding-top: .3rem;
-  height: 28px;
+  height: 28px; */
 }
 
 a:last-child{
-  background-color: gray;
+  /* background-color: gray;
   border-radius:1rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  border: none;
+  border: none; */
 }
 
 a:hover{
   text-decoration: none !important;
-
 }
 
 #row-two{
@@ -133,7 +183,7 @@ a:hover{
 }
 
 a.start-free{
-  display: inline-block;
+  /* display: inline-block;
   color: white !important;
   background-color: #eb5537;
   border-radius:1rem;
@@ -146,7 +196,7 @@ a.start-free{
   margin-top: 1rem;
   padding-top: .5rem;
   padding-bottom: .7rem;
-  height: 35px;
+  height: 35px; */
 
 }
 

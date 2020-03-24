@@ -8,19 +8,21 @@
             <img height="50px" src='https://user-images.githubusercontent.com/25479050/76873102-9e03e200-686d-11ea-9ff5-a928ff9cc97d.png' alt="brand-logo" />
           </div>
           <div class="d-none d-sm-block ml-auto">
-             <nav class="d-flex flex-row " style="text-align: right">
+             <nav class="d-flex flex-row mt-4 " style="text-align: right">
                 <% if user_signed_in? %>
                 <button type='button' class='logout'><%= link_to('Logout', destroy_user_session_path, method: :delete) %></button>
                 <% else %>
-                <button type='button' class='login'><%= link_to('Login',
-                new_user_session_path)  %> </button>
-                <button type='button' class='sign-up'><%= link_to('Sign Up', new_user_registration_path)  %></button>
+                <button type='button' class='login btn-default mr-4'><%= link_to('Login',
+                new_user_session_path)  %></button>
+
+                <button type='button' class='sign-up btn-default'><%= link_to('Sign Up', new_user_registration_path) %></button>
                 <% end %>
             </nav>
           </div>
           <div class="d-sm-none ml-auto">
             <div class="d-flex flex-row ">
-              <Link class="link" to="/login">SIGN IN</Link>
+              <button type='button' class='login'><%= link_to('Login',
+                new_user_session_path)  %></button>
             </div>
           </div>
         </div>
@@ -30,9 +32,7 @@
             <div class='heading'>
               Find your
               <br />
-              <br />
               Cocktails
-              <br />
               <br />
               anywhere
             </div>
@@ -43,7 +43,8 @@
               Wherever you are, feel yourself like at your personal bar
             </div>
 
-            <Link class="start-free" id="start" to="/signup">START FREE</Link>
+            <button type='button' class='sign-up'><%= link_to('Start Free',
+            new_user_registration_path)  %></button>
           </div>
         </div>
       </div>
