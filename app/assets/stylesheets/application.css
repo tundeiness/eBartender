@@ -247,7 +247,9 @@ i {
 
 /* SIGN IN */
 
-
+div.actions > input[value="Log in"]{
+  margin-top: .8rem;
+}
 
 
 
@@ -263,7 +265,7 @@ i {
 
 form{
   margin-top: 3rem;
-  margin-bottom: 2.45rem;
+  margin-bottom: 2.65rem;
   overflow-y: hidden;
   font-family: 'Source Sans Pro', sans-serif;
 }
