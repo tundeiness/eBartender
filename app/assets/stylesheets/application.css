@@ -359,3 +359,10 @@ div.field > label {
   font-size: .8rem;
   font-weight: 600;
 }
+
+
+/* Cocktail listing Page */
+
+div.alternatives > a {
+  color: #000 !important;
+}
