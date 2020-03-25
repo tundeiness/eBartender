@@ -20,7 +20,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/cocktails" component={Cocktails} />
-            <Route exact path="/singlecocktail" component={SingleCocktail} />
+            {/* <Route exact path="/singlecocktail" component={SingleCocktail} /> */}
+            <Route path="/singlecocktail/:id" exact component={SingleCocktail} />
           </Switch>
         </div>
         </Router>

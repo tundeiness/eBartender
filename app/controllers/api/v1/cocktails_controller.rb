@@ -16,7 +16,7 @@ module Api
       def show
         if cocktail && user_signed_in?
           # render json: cocktail
-          render json: {status: 'SUCCESS', message: 'Showing Cocktail', data: cocktail}, status: :"Showing #{cocktail.name}"
+          render json: {status: 'SUCCESS', message: 'Showing Cocktail', data: cocktail}, status: :ok
         else
           render json: {
             status: 500,

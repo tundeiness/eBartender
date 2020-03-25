@@ -1,13 +1,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+// import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Link } from 'react-router-dom';
 import styling from 'styled-components';
-import { getCurrentDate } from '../helper/utility';
+// import { getCurrentDate } from '../helper/utility';
 
 const HeadingDiv = styling.div`
 background-color: #eb5537;
@@ -23,7 +23,7 @@ class SingleCocktail extends React.Component {
 
     this.handleAddToFavourite = this.handleAddToFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
-    this.logoutClick = this.logoutClick.bind(this);
+    // this.logoutClick = this.logoutClick.bind(this);
   }
 
 
@@ -32,37 +32,56 @@ class SingleCocktail extends React.Component {
     const { params } = match;
     const { id } = params;
 
-    axios.get(`/api/v1/cocktails/${id}`, { withCredentials: true })
+    // axios.get(`/api/v1/cocktails/${id}`, { withCredentials: true })
+    //   .then(response => {
+    //     this.setState({
+    //       cocktail: response.data,
+    //     });
+    //   })
+    //   .catch(error => error);
+
+    const url = `/api/v1/cocktails/${id}`;
+    fetch(url)
       .then(response => {
-        this.setState({
-          cocktail: response.data,
-        });
+        console.log(response.data);
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error.");
       })
+      .then(response => this.setState({ cocktail: response.data, }))
       .catch(error => error);
   }
-
-
-  logoutClick() {
-    const { handleLogout } = this.props;
-    axios
-      .delete('/api/v1/logout', { withCredentials: true })
-      .then(() => {
-        handleLogout();
-        this.redirect();
-      })
-      .catch(error => error);
-  }
-
 
   handleAddToFavourite(cocktail) {
-    axios.post('/api/v1/favourite_cocktails',
-      {
-        favourite_cocktail:
-      { cocktail_id: cocktail.id },
-      }, { withCredentials: true })
-      .then(() => {
-        this.redirect();
+    // axios.post('/api/v1/favourite_cocktails',
+    //   {
+    //     favourite_cocktail:
+    //   { cocktail_id: cocktail.id },
+    //   }, { withCredentials: true })
+    //   .then(() => {
+    //     this.redirect();
+    //   })
+    //   .catch(error => error);
+
+    const URL = "/api/v1/favourite_cocktails";
+
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    },  {favourite_cocktail: { cocktail_id: cocktail.id }})
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error.");
       })
+      .then(()=> { this.redirect() })
       .catch(error => error);
   }
 
@@ -75,7 +94,7 @@ class SingleCocktail extends React.Component {
 
   render() {
     const { cocktail } = this.state;
-    // console.log(cocktail);
+    console.log("singu =>", cocktail);
 
     return (
       <div className="d-flex flex-column content-wrapper">
@@ -83,20 +102,20 @@ class SingleCocktail extends React.Component {
           <div className="d-flex flex-column">
             <p className="single-cocktail-date ml-3 mt-4">
               {' '}
-              { getCurrentDate('-') }
+              {/* { getCurrentDate('-') } */}
               {' '}
             </p>
           </div>
           <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
             <Link className="faves pr-md-3" id="fave" to="/userfave">My Cocktails</Link>
-            <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button>
+            {/* <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button> */}
           </div>
         </HeadingDiv>
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
           <div className="card mb-4" style={{ width: '25rem' }} id="content-card">
             <img
-              src={cocktail.picture}
+              src={cocktail.image}
               className="card-img-top"
               alt={`${cocktail.name}`}
             />

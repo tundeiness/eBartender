@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+// import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import styling from 'styled-components';
-import { getCurrentDate } from '../helper/utility';
+// import { getCurrentDate } from '../helper/utility';
 
 const HeadingDiv = styling.div`
 background-color: #eb5537;
