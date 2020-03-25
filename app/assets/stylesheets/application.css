@@ -363,6 +363,16 @@ div.field > label {
 
 /* Cocktail listing Page */
 
+div.alternatives{
+  height: 0;
+  margin-top: -1rem;
+}
+
 div.alternatives > a {
   color: #000 !important;
+}
+
+button#dashboard-logout{
+ position: relative;
+ bottom: 2rem;
 }

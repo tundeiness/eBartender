@@ -1,18 +1,29 @@
 import React from 'react';
 import Home from './Home';
-import Cocktails from './Cocktails';
+// import Cocktails from './Cocktails';
+// import Cocktails from './CocktailList;
+import Cocktails from './CocktailList';
 import SingleCocktail from './SingleCocktail';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Dashboard from './Dashboard';
+// import Cocktails from './CocktailList';
+// import { favouriteCocktails } from '../actions/index';
+// import SingleCocktail from './SingleCocktail';
+// import Userfaves from './UserFave';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/cocktails" component={Cocktails} />
-          <Route exact path="/singlecocktail" component={SingleCocktail} />
-        </Switch>
+        <Router>
+          <div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cocktails" component={Cocktails} />
+            <Route exact path="/singlecocktail" component={SingleCocktail} />
+          </Switch>
+        </div>
+        </Router>
       </div>
     )
   }
