@@ -64,11 +64,9 @@ class UserFave extends React.Component {
     //   })
     //   .catch(error => error);
 
-    const {
-      match: {
-        params: { id }
-      }
-    } = this.props;
+    const { match } = this.props;
+    const { params } = match;
+    const { id } = params;
 
     const url = `/api/v1/favourite_cocktails/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;

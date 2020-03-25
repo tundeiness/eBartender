@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
 
       resources :favourite_cocktails, only: %i[create destroy]
-      resources :favourite_dashboards, only: %i[index]
+      resources :favourites_dashboard, only: %i[index]
     end
   end
 

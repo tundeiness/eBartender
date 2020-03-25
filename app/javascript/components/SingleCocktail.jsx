@@ -83,6 +83,7 @@ class SingleCocktail extends React.Component {
       })
       .then(()=> { this.redirect() })
       .catch(error => error);
+      this.redirect();
   }
 
 
