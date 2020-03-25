@@ -34,7 +34,7 @@ class UserFave extends React.Component {
     //   })
     //   .catch(error => error);
 
-    const URL = "/api/v1/favourite_dashboards";
+    const URL = "/api/v1/favourites_dashboard";
     fetch(URL)
       .then(response => {
         if (response.ok) {
