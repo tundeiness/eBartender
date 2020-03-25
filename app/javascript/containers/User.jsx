@@ -15,10 +15,21 @@ class Users extends React.Component {
     const { theUser } = this.props;
 
 
-    axios.get('/api/v1/users', { theUser }, { withCredentials: true })
-      .then(res => {
-        theUser(res.data);
+    // axios.get('/api/v1/users', { theUser }, { withCredentials: true })
+    //   .then(res => {
+    //     theUser(res.data);
+    //   })
+    //   .catch(error => error);
+
+    const url = "/api/v1/users";
+    fetch(url, theUser)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error.");
       })
+      .then(response => theUser(response.data))
       .catch(error => error);
   }
 
