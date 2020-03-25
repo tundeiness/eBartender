@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -21,18 +20,9 @@ class UserFave extends React.Component {
     };
     this.handleRemoveFromFavourite = this.handleRemoveFromFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
-    this.redirectLogout = this.redirectLogout.bind(this);
-    // this.logoutClick = this.logoutClick.bind(this);
   }
 
   componentDidMount() {
-    // axios.get('/api/v1/favourite_dashboards', { withCredentials: true })
-    //   .then(res => {
-    //     this.setState({
-    //       userFavourites: [...res.data],
-    //     });
-    //   })
-    //   .catch(error => error);
 
     const URL = "/api/v1/favourites_dashboard";
     fetch(URL)
@@ -46,32 +36,11 @@ class UserFave extends React.Component {
       .catch(error => error);
   }
 
-  // logoutClick() {
-  //   const { handleLogout } = this.props;
-  //   axios
-  //     .delete('https://floating-woodland-73879.herokuapp.com/api/v1/logout', { withCredentials: true })
-  //     .then(() => {
-  //       handleLogout();
-  //       this.redirectLogout();
-  //     })
-  //     .catch(error => error);
-  // }
-
-  handleRemoveFromFavourite() {
-    // axios.delete(`/api/v1/favourite_cocktails/${id}`, { withCredentials: true })
-    //   .then(() => {
-    //     this.redirect();
-    //   })
-    //   .catch(error => error);
-
-    const { match } = this.props;
-    const { params } = match;
-    const { id } = params;
-
-    const url = `/api/v1/favourite_cocktails/${id}`;
+  handleRemoveFromFavourite(id) {
+    const URL = `/api/v1/favourite_cocktails/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
-    fetch(url, {
+    fetch(URL, {
       method: "DELETE",
       headers: {
         "X-CSRF-Token": token,
@@ -84,21 +53,15 @@ class UserFave extends React.Component {
         }
         throw new Error("Network Error");
       })
-      .then(() => this.redirect())
+      .then(() => { this.redirect() } )
       .catch(error => error);
-
+      this.redirect();
   }
 
   redirect() {
     const { history } = this.props;
     history.push('/dashboard');
   }
-
-  redirectLogout() {
-    const { history } = this.props;
-    history.push('/');
-  }
-
 
   render() {
     const { userFavourites } = this.state;
@@ -125,7 +88,7 @@ class UserFave extends React.Component {
               {faves.ingredients}
             </p>
           </div>
-          <button type="button" id="addToFave" onClick={() => this.handleRemoveFromFavourite()}>
+          <button type="button" id="addToFave" onClick={() => this.handleRemoveFromFavourite(faves.id)}>
             <FontAwesomeIcon icon={faTrash} className="trash" />
             {' '}
             Remove From Favourite
@@ -157,7 +120,6 @@ class UserFave extends React.Component {
           </div>
           <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
             <Link className="faves pr-md-3" id="fave" to="/dashboard">Dashboard</Link>
-            {/* <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button> */}
           </div>
         </HeadingDiv>
         <div className="container py-5 text-center">

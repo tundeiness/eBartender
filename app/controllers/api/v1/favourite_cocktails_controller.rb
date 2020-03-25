@@ -25,6 +25,9 @@ module Api
       def destroy
         @favouritecocktail = current_user.favourite_cocktails.find_by(cocktail_id: params[:id])
         @favouritecocktail.delete
+
+        # @favouritecocktail = FavouriteCocktail.find(params[:id])
+        # current_user.favourite_cocktails.delete(@favouritecocktail.id)
       end
 
       private
