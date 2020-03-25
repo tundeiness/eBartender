@@ -94,7 +94,7 @@ class SingleCocktail extends React.Component {
 
   render() {
     const { cocktail } = this.state;
-    console.log("singu =>", cocktail);
+    // console.log("singu =>", cocktail);
 
     return (
       <div className="d-flex flex-column content-wrapper">
