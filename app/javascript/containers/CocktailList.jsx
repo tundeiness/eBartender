@@ -41,8 +41,6 @@ class CocktailList extends React.Component {
 
   render() {
     const { cocktails } = this.state;
-    console.log("container =>",cocktails)
-
 
     return (
       <div>

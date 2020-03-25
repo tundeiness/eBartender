@@ -22,16 +22,27 @@ class UserFave extends React.Component {
     this.handleRemoveFromFavourite = this.handleRemoveFromFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
     this.redirectLogout = this.redirectLogout.bind(this);
-    this.logoutClick = this.logoutClick.bind(this);
+    // this.logoutClick = this.logoutClick.bind(this);
   }
 
   componentDidMount() {
-    axios.get('/api/v1/favourite_dashboards', { withCredentials: true })
-      .then(res => {
-        this.setState({
-          userFavourites: [...res.data],
-        });
+    // axios.get('/api/v1/favourite_dashboards', { withCredentials: true })
+    //   .then(res => {
+    //     this.setState({
+    //       userFavourites: [...res.data],
+    //     });
+    //   })
+    //   .catch(error => error);
+
+    const URL = "/api/v1/favourite_dashboards";
+    fetch(URL)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error.");
       })
+      .then(response => this.setState({ userFavourites: [...response.data],}))
       .catch(error => error);
   }
 
@@ -46,12 +57,38 @@ class UserFave extends React.Component {
   //     .catch(error => error);
   // }
 
-  handleRemoveFromFavourite(id) {
-    axios.delete(`/api/v1/favourite_cocktails/${id}`, { withCredentials: true })
-      .then(() => {
-        this.redirect();
+  handleRemoveFromFavourite() {
+    // axios.delete(`/api/v1/favourite_cocktails/${id}`, { withCredentials: true })
+    //   .then(() => {
+    //     this.redirect();
+    //   })
+    //   .catch(error => error);
+
+    const {
+      match: {
+        params: { id }
+      }
+    } = this.props;
+
+    const url = `/api/v1/favourite_cocktails/${id}`;
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error");
       })
+      .then(() => this.redirect())
       .catch(error => error);
+
   }
 
   redirect() {
@@ -72,7 +109,7 @@ class UserFave extends React.Component {
       <div key={faves.id} className="col-md-6 col-lg-4">
         <div className="card mb-4">
           <img
-            src={faves.picture}
+            src={faves.image}
             className="card-img-top"
             alt={`${faves.name}`}
             style={{ height: '270px' }}
@@ -90,7 +127,7 @@ class UserFave extends React.Component {
               {faves.ingredients}
             </p>
           </div>
-          <button type="button" id="addToFave" onClick={() => this.handleRemoveFromFavourite(faves.id)}>
+          <button type="button" id="addToFave" onClick={() => this.handleRemoveFromFavourite()}>
             <FontAwesomeIcon icon={faTrash} className="trash" />
             {' '}
             Remove From Favourite
@@ -116,13 +153,13 @@ class UserFave extends React.Component {
           <div className="d-flex flex-column">
             <p className="single-cocktail-date ml-3 mt-4">
               {' '}
-              {getCurrentDate('-')}
+              {/* {getCurrentDate('-')} */}
               {' '}
             </p>
           </div>
           <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
             <Link className="faves pr-md-3" id="fave" to="/dashboard">Dashboard</Link>
-            <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button>
+            {/* <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button> */}
           </div>
         </HeadingDiv>
         <div className="container py-5 text-center">
