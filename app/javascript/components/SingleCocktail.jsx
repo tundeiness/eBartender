@@ -71,10 +71,10 @@ class SingleCocktail extends React.Component {
       method: "POST",
       headers: {
         "X-CSRF-Token": token,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(body)
-    },  {favourite_cocktail: { cocktail_id: cocktail.id }})
+      body: JSON.stringify({favourite_cocktail: { cocktail_id: cocktail.id }})
+    })
       .then(response => {
         if (response.ok) {
           return response.json();

@@ -55,7 +55,7 @@ const Dashboard = props => {
           </p> */}
           <p className="date ml-3">
             {' '}
-            { getCurrentDate('-') }
+            {/* { getCurrentDate('-') } */}
             {' '}
           </p>
         </div>

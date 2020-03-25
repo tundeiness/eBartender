@@ -18,7 +18,7 @@ class CocktailList extends React.Component {
 
   render() {
     const { cocktails } = this.props;
-    console.log("cocktails =>", cocktails)
+    // console.log("cocktails =>", cocktails)
 
     const allCocktails = cocktails.map(cocktail => (
       <div key={cocktail.id} className="col-md-6 col-lg-4 mb-4">
@@ -32,11 +32,11 @@ class CocktailList extends React.Component {
           <div className="card-body cocktails-card-body">
             <h5 className="card-title text-center list-heading">{ cocktail.name }</h5>
           </div>
-          <div className="text-center link-wrapper">
+          <button className="text-center link-wrapper" type="button">
             <Link to={`/singlecocktail/${cocktail.id}`} id="view">
               More...
             </Link>
-          </div>
+          </button>
         </div>
       </div>
     ));

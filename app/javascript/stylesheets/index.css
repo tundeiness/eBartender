@@ -219,6 +219,13 @@ input[type=email]:invalid {
   font-size: .8rem;
 }
 
+div#dash-content > a {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    padding-left: 1rem;
+    border: none;
+}
+
 
 
 /* Cocktails */
@@ -262,6 +269,9 @@ input[type=email]:invalid {
   text-transform: uppercase;
 }
 
+button.link-wrapper > a {
+  width: 100%;
+}
 
 /* SingleCocktail */
 
