@@ -1,13 +1,11 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import styling from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import Cocktails from '../containers/CocktailList';
-import { getCurrentDate } from '../helper/utility';
+// import { getCurrentDate } from '../helper/utility';
 
 
 const HeadingDiv = styling.div`
@@ -21,38 +19,12 @@ background-color: gainsboro;
 
 
 const Dashboard = props => {
-  // const logoutClick = () => {
-  //   axios
-  //     .delete('https://floating-woodland-73879.herokuapp.com/api/v1/logout', { withCredentials: true })
-  //     .then(() => {
-  //       props.handleLogout();
-  //       redirect();
-  //     })
-  //     .catch(error => error);
-  // };
-
-
-  // const redirect = () => {
-  //   props.history.push('/');
-  // };
-
-  // const welcomeMessage = () => {
-  //   const username = props.name;
-  //   return `Welcome, ${username}!!`;
-  // };
-
-  // const { loggedInStatus } = props;
 
   return (
 
     <div className="d-flex flex-column">
       <HeadingDiv className="d-flex flex-row justify-content-between">
         <div className="d-flex flex-column">
-          {/* <p className="message ml-3 pt-2">
-            {' '}
-            { loggedInStatus === 'LOGGED_IN' ? welcomeMessage() : 'You are not logged in ' || 'you have been logged out'}
-            {' '}
-          </p> */}
           <p className="date ml-3">
             {' '}
             {/* { getCurrentDate('-') } */}
@@ -61,7 +33,6 @@ const Dashboard = props => {
         </div>
         <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
           <Link className="faves pr-md-3" id="fave" to="/userfave">My Cocktails</Link>
-          {/* <button type="button" className="dashboard mt-1" onClick={() => logoutClick()}>LOG OUT</button> */}
         </div>
       </HeadingDiv>
       <main>
@@ -103,19 +74,6 @@ const Dashboard = props => {
     </div>
   );
 };
-
-// Dashboard.defaultProps = {
-//   loggedInStatus: '',
-//   handleLogout: () => {},
-//   name: 'john',
-// };
-
-// Dashboard.propTypes = {
-//   history: PropTypes.instanceOf(Object).isRequired,
-//   handleLogout: PropTypes.instanceOf(Function),
-//   loggedInStatus: PropTypes.string,
-//   name: PropTypes.string,
-// };
 
 
 export default Dashboard;
