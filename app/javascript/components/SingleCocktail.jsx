@@ -66,7 +66,6 @@ class SingleCocktail extends React.Component {
       })
       .then(()=> {response})
       .catch(error => { error } );
-      // this.redirect();
   }
 
 
@@ -91,7 +90,6 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
             <Link className="faves pr-md-3" id="fave" to="/userfave">My Cocktails</Link>
-            {/* <button type="button" className="dashboard mt-1" onClick={() => this.logoutClick()}>LOG OUT</button> */}
           </div>
         </HeadingDiv>
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
