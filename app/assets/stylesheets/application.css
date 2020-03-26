@@ -64,7 +64,6 @@ footer{
 }
 
 #header-logo{
-  margin-top: .7rem;
   margin-left: 1.4rem;
 }
 
@@ -196,7 +195,6 @@ i {
 div.actions > input[value="Log in"]{
   margin-top: .8rem;
 }
-
 
 
 /* SIGN UP */
@@ -332,4 +330,10 @@ div.alternatives > button {
 
 div.alternatives > button > a {
   text-transform: uppercase !important;
+}
+
+/* footer */
+
+#footer-matter{
+
 }
