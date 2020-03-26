@@ -1,12 +1,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-// import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-
 import { Link } from 'react-router-dom';
 import styling from 'styled-components';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { getCurrentDate } from '../helper/utility';
 
 const HeadingDiv = styling.div`
@@ -23,7 +23,6 @@ class SingleCocktail extends React.Component {
 
     this.handleAddToFavourite = this.handleAddToFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
-    // this.logoutClick = this.logoutClick.bind(this);
   }
 
 
@@ -31,14 +30,6 @@ class SingleCocktail extends React.Component {
     const { match } = this.props;
     const { params } = match;
     const { id } = params;
-
-    // axios.get(`/api/v1/cocktails/${id}`, { withCredentials: true })
-    //   .then(response => {
-    //     this.setState({
-    //       cocktail: response.data,
-    //     });
-    //   })
-    //   .catch(error => error);
 
     const url = `/api/v1/cocktails/${id}`;
     fetch(url)
@@ -54,15 +45,6 @@ class SingleCocktail extends React.Component {
   }
 
   handleAddToFavourite(cocktail) {
-    // axios.post('/api/v1/favourite_cocktails',
-    //   {
-    //     favourite_cocktail:
-    //   { cocktail_id: cocktail.id },
-    //   }, { withCredentials: true })
-    //   .then(() => {
-    //     this.redirect();
-    //   })
-    //   .catch(error => error);
 
     const URL = "/api/v1/favourite_cocktails";
 
@@ -77,13 +59,14 @@ class SingleCocktail extends React.Component {
     })
       .then(response => {
         if (response.ok) {
+          toast.success('Added to your favourite Cocktails');
           return response.json();
         }
-        throw new Error("Network Error.");
+        throw new Error(toast.error('This Cocktail exist in your list, choose another one'));
       })
-      .then(()=> { this.redirect() })
-      .catch(error => error);
-      this.redirect();
+      .then(()=> {response})
+      .catch(error => { error } );
+      // this.redirect();
   }
 
 
@@ -95,7 +78,6 @@ class SingleCocktail extends React.Component {
 
   render() {
     const { cocktail } = this.state;
-    // console.log("singu =>", cocktail);
 
     return (
       <div className="d-flex flex-column content-wrapper">
@@ -147,6 +129,7 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="card mb-4" />
         </div>
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
       </div>
     );
   }
