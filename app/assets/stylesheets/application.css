@@ -325,20 +325,16 @@ div.alternatives > p.notice {
   font-size: .8rem;
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 0rem !important;
-  padding-top: .6rem;
 }
 
-div.alternatives > button > a{
-  margin-right: 0rem !important;
-  margin-top: 0rem !important;
-  padding-top: 0rem !important;
-  height: 0 !important;
-  background-color: transparent !important;
-}
 
 div.alternatives{
-  position: fixed;
-  top: 1.2rem;
+  height: 0;
+}
+
+div.alternatives > button.logout {
+ position: relative;
+ top: .7rem;
 }
 
 

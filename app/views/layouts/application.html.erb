@@ -14,9 +14,7 @@
 
 <body>
     <% if user_signed_in? %>
-        <div class='alternatives d-flex flex-row-reverse '>
-             <p class="notice"><%= notice %></p>
-             <p class="alert"><%= alert %></p>
+        <div class='alternatives'>
             <%= yield %>
         </div>
     <% else %>
