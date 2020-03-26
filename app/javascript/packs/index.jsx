@@ -4,27 +4,13 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom';
-import App from '../components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../stylesheets/index.css';
 import Display from '../containers/Display';
 import { createStore } from 'redux';
 import rootReducers from '../reducers/index'
-// import PropTypes from 'prop-types'
 
-// const Hello = props => (
-//   <div>Hello {props.name}!</div>
-// )
-
-// Hello.defaultProps = {
-//   name: 'David'
-// }
-
-// Hello.propTypes = {
-//   name: PropTypes.string
-// }
 
 const STATES = {
   cocktails: [{
