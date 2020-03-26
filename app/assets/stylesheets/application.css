@@ -203,7 +203,7 @@ div.actions > input[value="Log in"]{
 
 .app-wrapper{
   background-image: url('https://user-images.githubusercontent.com/25479050/76873043-87f62180-686d-11ea-929c-542c5a0f2f6d.jpg');
-  height: 100%;
+  min-height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -311,7 +311,7 @@ div.field > label {
 
 div.alternatives{
   height: 0;
-  margin-top: -1rem;
+  margin-top: -.98rem;
 }
 
 div.alternatives > a {
@@ -321,4 +321,15 @@ div.alternatives > a {
 button#dashboard-logout{
  position: relative;
  bottom: 2rem;
+
+}
+
+/* dashboard */
+
+div.alternatives > button {
+  background-color: transparent !important;
+}
+
+div.alternatives > button > a {
+  text-transform: uppercase !important;
 }
