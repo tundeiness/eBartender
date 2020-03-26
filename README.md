@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tundeiness/tipsy_bartender">
+  <a href="https://github.com/tundeiness/eBartender">
     <img src="https://user-images.githubusercontent.com/25479050/76873102-9e03e200-686d-11ea-9ff5-a928ff9cc97d.png" alt="Logo" width="180" height="80">
   </a>
 
@@ -14,9 +14,9 @@
     <br />
     <a href="https://pedantic-mahavira-56d4dd.netlify.com">View Demo</a>
     ·
-    <a href="https://github.com/tundeiness/tipsy_bartender/issues">Report Bug</a>
+    <a href="https://github.com/tundeiness/eBartender/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tundeiness/tipsy_bartender/issues">Request Feature</a>
+    <a href="https://github.com/tundeiness/eBartender/issues">Request Feature</a>
   </p>
 </p>
 
@@ -98,7 +98,7 @@ yarn install
 1. Clone the repo
 
 ```sh
-git clone https:://github.com/tundeiness/tipsy_bartender.git
+git clone git@github.com:tundeiness/eBartender.git
 ```
 
 2. install dependencies by running
@@ -170,16 +170,18 @@ Tunde Oretade - [@tundeiness](https://twitter.com/tundeiness)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tundeiness/tipsy_bartender.svg?style=flat-square
-[contributors-url]: https://github.com/tundeiness/tipsy_bartender/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tundeiness/tipsy_bartender.svg?style=flat-square
-[forks-url]: https://github.com/tundeiness/tipsy_bartender/network/members
-[stars-shield]: https://img.shields.io/github/stars/tundeiness/tipsy_bartender.svg?style=flat-square
-[stars-url]: https://github.com/tundeiness/tipsy_bartender/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tundeiness/tipsy_bartender.svg?style=flat-square
-[issues-url]: https://github.com/tundeiness/tipsy_bartender/issues
-[license-shield]: https://img.shields.io/github/license/tundeiness/tipsy_bartender.svg?style=flat-square
-[license-url]: https://github.com/tundeiness/tipsy_bartender/blob/master/LICENSE.txt
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/tundeiness/eBartender.svg?style=flat-square
+[contributors-url]: https://github.com/tundeiness/eBartender/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/tundeiness/eBartender.svg?style=flat-square
+[forks-url]: https://github.com/tundeiness/tundeiness/eBartender/network/members
+[stars-shield]: https://img.shields.io/github/stars/tundeiness/eBartender.svg?style=flat-square
+[stars-url]: https://github.com/tundeiness/tundeiness/eBartender/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tundeiness/eBartender.svg?style=flat-square
+[issues-url]: https://github.com/tundeiness/eBartender/issues
+[license-shield]: https://img.shields.io/github/license/tundeiness/eBartender.svg?style=flat-square
+[license-url]: https://github.com/tundeiness/eBartender/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tunde-oretade/
 [product-screenshot]: images/screenshot.png
