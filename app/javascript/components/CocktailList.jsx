@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class CocktailList extends React.Component {
   constructor(props) {
@@ -18,7 +20,6 @@ class CocktailList extends React.Component {
 
   render() {
     const { cocktails } = this.props;
-    // console.log("cocktails =>", cocktails)
 
     const allCocktails = cocktails.map(cocktail => (
       <div key={cocktail.id} className="col-md-6 col-lg-4 mb-4">
@@ -59,6 +60,7 @@ class CocktailList extends React.Component {
             </div>
           </main>
         </div>
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
       </div>
     );
   }

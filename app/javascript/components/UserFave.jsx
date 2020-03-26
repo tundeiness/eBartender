@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import styling from 'styled-components';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { getCurrentDate } from '../helper/utility';
 
 const HeadingDiv = styling.div`
@@ -49,9 +51,10 @@ class UserFave extends React.Component {
     })
       .then(response => {
         if (response.ok) {
+          toast.success('Successfully removed');
           return response.json();
         }
-        throw new Error("Network Error");
+        throw new Error(toast.error('Something Happened'));
       })
       .then(() => { this.redirect() } )
       .catch(error => error);
@@ -134,6 +137,7 @@ class UserFave extends React.Component {
             </div>
           </main>
         </div>
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
       </>
     );
   }
