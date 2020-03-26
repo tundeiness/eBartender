@@ -1,8 +1,6 @@
 
-import React from 'react'
-// import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import styling from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
