@@ -38,9 +38,4 @@
   "repository": "git@github.com:tundeiness/eBartender.git",
   "author": "tunde oretade",
   "license": "MIT",
-  "scripts": {
-    "build": "yarn --cwd client install && yarn --cwd client build",
-    "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "yarn build && yarn deploy"
-  }
 }
