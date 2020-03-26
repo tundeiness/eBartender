@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import styling from 'styled-components';
-import {ToastContainer, toast} from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { getCurrentDate } from '../helper/utility';
 
@@ -137,7 +137,6 @@ class UserFave extends React.Component {
             </div>
           </main>
         </div>
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
       </>
     );
   }
