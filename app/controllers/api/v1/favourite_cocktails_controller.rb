@@ -41,7 +41,6 @@ module Api
       def favourite_params
         params.require(:favourite_cocktail).permit(:cocktail_id)
       end
-      # Cocktail.find(params[:id])
     end
   end
 end
