@@ -344,7 +344,7 @@ div.alternatives > button.logout {
 /* FROM INDEX */
 
 
-/* #row-one {
+#row-one {
   padding-top: 3rem;
 }
 
@@ -370,9 +370,9 @@ div.alternatives > button.logout {
 #rowfive{
   padding-top: 1rem;
   text-decoration: none;
-} */
+}
 
-/* a{
+a{
   display: inline-block;
   text-transform: capitalize !important;
   color: white !important;
@@ -395,14 +395,14 @@ a:last-child{
 a:hover{
   text-decoration: none !important;
 
-} */
+}
 
 #row-two{
   margin-top: 7.5rem;
   margin-bottom: 7.5rem;
   margin-left: 1.2rem;
 }
-/*
+
 a.start-free{
   display: inline-block;
   color: white !important;
@@ -419,7 +419,7 @@ a.start-free{
   padding-bottom: .7rem;
   height: 35px;
 
-} */
+}
 
 #footer-logo{
   text-align: center;
