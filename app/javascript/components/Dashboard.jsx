@@ -41,7 +41,7 @@ const Dashboard = props => {
       <Footer className="container-fluid">
         <div className="d-flex flex-row justify-content-md-between" id="row-three">
           <div id="left" />
-          <div className="d-flex flex-column" id="footer-matter">
+          <div className="d-flex flex-column m-auto" id="footer-matter">
             <div id="footer-logo">
               <img height="50px" src="https://user-images.githubusercontent.com/25479050/76873102-9e03e200-686d-11ea-9ff5-a928ff9cc97d.png" alt="brand-logo" />
             </div>
