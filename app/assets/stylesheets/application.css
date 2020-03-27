@@ -104,34 +104,7 @@ button.login > a {
   cursor: pointer;
 }
 
-.sign-up{
-    background-color:#eb5537 !important;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: none !important;
-    line-height: 1.5;
-    border-radius: 1rem;
-    padding-top: .3rem;
-    padding-bottom: .3rem;
-}
 
-
-button.sign-up > a{
-  font-family: 'Source Sans Pro', sans-serif !important;
-  font-size: .8rem;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: bold;
-  padding-left: .8rem;
-  padding-right: .8rem;
-}
-
-.sign-up:hover{
-  text-decoration: none;
-  cursor: pointer;
-}
 
 
 a:hover{
@@ -417,7 +390,6 @@ a.start-free{
   margin-top: 1rem;
   padding-top: .5rem;
   padding-bottom: .7rem;
-  height: 35px;
 
 }
 
@@ -747,5 +719,42 @@ button{
   outline: none !important;
 }
 
+nav > button.login {
+  margin-top: -1rem
+}
+
+.sign-up{
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none !important;
+  line-height: 1.5;
+  border-radius: 1rem;
+  height: 0rem;
+}
 
 
+button.sign-up > a{
+font-family: 'Source Sans Pro', sans-serif !important;
+font-size: .8rem;
+text-transform: uppercase !important;
+color: #fff;
+font-weight: bold;
+padding-left: .8rem;
+padding-right: .8rem;
+margin-top: -.6rem;
+background-color: #eb5537 !important;
+
+}
+
+.sign-up:hover{
+text-decoration: none;
+cursor: pointer;
+}
+
+button.login > a {
+  background-color: transparent !important;
+  text-transform: uppercase !important;
+}
