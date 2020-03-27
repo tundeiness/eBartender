@@ -12,7 +12,7 @@
     Final capstone project of Microverse Software Development Bootcamp, developed with Ruby on Rails, ReactJS, React Router, Redux, and Bootstrap.
     <br />
     <br />
-    <a href="https://pedantic-mahavira-56d4dd.netlify.com">View Demo</a>
+    <a href="https://gentle-harbor-14657.herokuapp.com">View Demo</a>
     ·
     <a href="https://github.com/tundeiness/eBartender/issues">Report Bug</a>
     ·
