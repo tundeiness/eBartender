@@ -14,9 +14,9 @@ module Api
       end
 
       def show
-        if cocktail && user_signed_in?
-          # render json: cocktail
-          render json: {status: 'SUCCESS', message: 'Showing Cocktail', data: cocktail}, status: :ok
+        # cocktail = Cocktail.find(params[:id])
+        if @cocktail && user_signed_in?
+          render json: {status: 'SUCCESS', message: 'Showing Cocktail', data: @cocktail}, status: :ok
         else
           render json: {
             status: 500,
@@ -55,13 +55,8 @@ module Api
       end
 
       def set_cocktail
-        Cocktail.find(params[:id])
+        @cocktail = Cocktail.find(params[:id])
       end
-
-      def cocktail
-        @cocktail ||= Cocktail.find(params[:id])
-      end
-
     end
   end
 end

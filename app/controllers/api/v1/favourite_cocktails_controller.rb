@@ -16,9 +16,11 @@ module Api
       def create
         fav = current_user.favourite_cocktails.new(favourite_params)
         if fav.save!
-          render json: 'created', status: :created
+          render json: { message: 'created' }, status: :created
         else
-          render json: 'can\'t create', status: 500
+          # render json: { message: 'can\'t create' }, status: 500
+          render json: { errors: fav.errors.full_messages },
+           status: :unprocessable_entity
         end
       end
 
@@ -28,15 +30,6 @@ module Api
       end
 
       private
-
-      def favourited?
-        FavouriteCocktail.where(user_id: current_user.id, cocktail_id:
-        params[:cocktail_id]).exists?
-      end
-
-      def find_favourite
-        @favouritecocktail = @cocktail.favouritecocktail.find(params[:id])
-      end
 
       def favourite_params
         params.require(:favourite_cocktail).permit(:cocktail_id)

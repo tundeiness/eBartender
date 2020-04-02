@@ -4,3 +4,6 @@ FactoryBot.define do
     cocktail
   end
 end
+
+
+

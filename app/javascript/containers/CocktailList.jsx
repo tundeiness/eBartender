@@ -14,17 +14,6 @@ class CocktailList extends React.Component {
   }
 
 
-  // componentDidMount() {
-  //   axios.get('/api/v1/cocktails', { withCredentials: true })
-  //     .then(res => {
-  //       this.setState({
-  //         cocktails: [...res.data],
-  //       });
-  //     })
-  //     .catch(error => error);
-  // }
-
-
   componentDidMount() {
     const url = "/api/v1/cocktails";
     fetch(url)

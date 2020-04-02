@@ -14,13 +14,6 @@ class Users extends React.Component {
   componentDidMount() {
     const { theUser } = this.props;
 
-
-    // axios.get('/api/v1/users', { theUser }, { withCredentials: true })
-    //   .then(res => {
-    //     theUser(res.data);
-    //   })
-    //   .catch(error => error);
-
     const url = "/api/v1/users";
     fetch(url, theUser)
       .then(response => {
