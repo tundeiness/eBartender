@@ -81,7 +81,7 @@ install them.
 * npm
 
 ```sh
-npm install npm@latest -g
+npm install
 ```
 
 OR
@@ -129,12 +129,6 @@ rails db:seed
 
 ```sh
 rails server
-```
-
-7. Run the development server
-
-```sh
-./bin/webpack-dev-server
 ```
 
 ## Contributing
