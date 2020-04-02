@@ -3,15 +3,9 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import styling from 'styled-components';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { getCurrentDate } from '../helper/utility';
-
-const HeadingDiv = styling.div`
-background-color: #eb5537;
-height: 5rem;
-`;
+import FaveHeading from './FaveHeading';
 
 class UserFave extends React.Component {
   constructor(props) {
@@ -113,18 +107,7 @@ class UserFave extends React.Component {
     return (
 
       <>
-        <HeadingDiv className="d-flex flex-row justify-content-between ">
-          <div className="d-flex flex-column">
-            <p className="single-cocktail-date ml-3 mt-4">
-              {' '}
-              {/* {getCurrentDate('-')} */}
-              {' '}
-            </p>
-          </div>
-          <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
-            <Link className="faves pr-md-3" id="fave" to="/dashboard">Dashboard</Link>
-          </div>
-        </HeadingDiv>
+        <FaveHeading/>
         <div className="container py-5 text-center">
           <p className="lead text-muted">
             Here are the list of your recent favourite cocktails

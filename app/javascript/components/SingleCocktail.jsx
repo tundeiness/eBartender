@@ -4,15 +4,10 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import styling from 'styled-components';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { getCurrentDate } from '../helper/utility';
+import Heading from './Heading';
 
-const HeadingDiv = styling.div`
-background-color: #eb5537;
-height: 5rem;
-`;
 
 
 class SingleCocktail extends React.Component {
@@ -81,18 +76,7 @@ class SingleCocktail extends React.Component {
 
     return (
       <div className="d-flex flex-column content-wrapper">
-        <HeadingDiv className="d-flex flex-row justify-content-between ">
-          <div className="d-flex flex-column">
-            <p className="single-cocktail-date ml-3 mt-4">
-              {' '}
-              {/* { getCurrentDate('-') } */}
-              {' '}
-            </p>
-          </div>
-          <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
-            <Link className="faves pr-md-3" id="fave" to="/userfave">My Cocktails</Link>
-          </div>
-        </HeadingDiv>
+          <Heading />
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
           <div className="card mb-4" style={{ width: '25rem' }} id="content-card">

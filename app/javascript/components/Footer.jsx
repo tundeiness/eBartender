@@ -1,15 +1,12 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import styling from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-// import Cocktails from '../containers/CocktailList';
+import { Footer as Foot } from '../home/style';
 
 
 const Footer = props => {
-
   return (
-    <Footer className="container-fluid">
+    <Foot className="container-fluid">
     <div className="d-flex flex-row justify-content-md-between" id="row-three">
       <div id="left" />
       <div className="d-flex flex-column m-auto" id="footer-matter">
@@ -41,7 +38,7 @@ const Footer = props => {
       </div>
       <div id="right" />
     </div>
-  </Footer>
+  </Foot>
   );
 
 }
