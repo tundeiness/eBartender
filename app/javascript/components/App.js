@@ -14,7 +14,7 @@ class App extends React.Component {
       <div>
         <Router>
           <div>
-          <ToastContainer position={toast.POSITION.TOP_RIGHT}/>
+          <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/dashboard" exact component={Dashboard} />
