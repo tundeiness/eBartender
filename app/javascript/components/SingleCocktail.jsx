@@ -10,6 +10,9 @@ import Heading from './Heading';
 
 
 
+
+
+
 class SingleCocktail extends React.Component {
   constructor(props) {
     super(props);
@@ -104,7 +107,7 @@ class SingleCocktail extends React.Component {
                 {' '}
                 Back to cocktails
               </Link>
-              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)}>
+              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)} >
                 <FontAwesomeIcon icon={faHeart} className="heart" />
                 Add to Favourites
               </button>

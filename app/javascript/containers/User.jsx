@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/index';
 

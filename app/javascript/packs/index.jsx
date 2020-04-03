@@ -6,7 +6,6 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../stylesheets/index.css';
 import Display from '../containers/Display';

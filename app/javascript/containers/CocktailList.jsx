@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
 import { getCocktails, favouriteCocktails } from '../actions/index';
 import Cocktails from '../components/CocktailList';
 
@@ -50,9 +49,6 @@ const mapDispatchToProps = dispatch => ({
   favouriteCocktails: filter => dispatch(favouriteCocktails(filter)),
 });
 
-CocktailList.propTypes = {
-  // getDbCocktails: PropTypes.instanceOf(Function).isRequired,
-  // cocktails: PropTypes.instanceOf(Object).isRequired,
-};
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);

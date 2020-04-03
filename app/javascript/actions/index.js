@@ -9,6 +9,7 @@ const getCocktails = cocktail => ({
   payload: cocktail,
 });
 
+
 const getFavouriteCocktails = favourites => ({
   type: GET_FAVOURITES_REQ,
   payload: favourites,
@@ -26,5 +27,5 @@ const getUser = user => ({
 
 
 export {
-  getCocktails, getUser, getFavouriteCocktails, favouriteCocktails,
+  getCocktails, getUser, getFavouriteCocktails, favouriteCocktails
 };
