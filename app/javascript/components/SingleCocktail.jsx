@@ -4,12 +4,10 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import {ToastContainer, toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import Heading from './Heading';
-import { ToastSuccess, ToastError } from './notify/index';
-
-
+// import { ToastSuccess, ToastError } from './notify/index';
 
 
 
@@ -18,7 +16,10 @@ class SingleCocktail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { cocktail: '' };
+    this.state = { cocktail: '',
+    // showSuccessAlert: false,
+    // showFailAlert: false
+   };
 
     this.handleAddToFavourite = this.handleAddToFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
@@ -33,7 +34,6 @@ class SingleCocktail extends React.Component {
     const url = `/api/v1/cocktails/${id}`;
     fetch(url)
       .then(response => {
-        console.log(response.data);
         if (response.ok) {
           return response.json();
         }
@@ -58,13 +58,18 @@ class SingleCocktail extends React.Component {
     })
       .then(response => {
         if (response.ok) {
-          // toast.success('Added to your favourite Cocktails');
-          <ToastSuccess/>
+          toast.success('Added to your favourite Cocktails');
+          // this.setState({
+          //   showSuccessAlert: true
+          // });
+
           return response.json();
         }
         throw new Error(
-          <ToastError/>
-          // toast.error('This Cocktail exist in your list, choose another one')
+          // this.setState({
+          //   showFailAlert: true
+          // })
+           toast.error('This Cocktail exist in your list, choose another one')
           );
       })
       .then(()=> {response})
@@ -85,6 +90,8 @@ class SingleCocktail extends React.Component {
     return (
       <div className="d-flex flex-column content-wrapper">
           <Heading />
+            {/* { this.state.showSuccessAlert && <ToastSuccess/> }
+            { this.state.showFailAlert && <ToastError/> } */}
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
           <div className="card mb-4" style={{ width: '25rem' }} id="content-card">
@@ -112,7 +119,7 @@ class SingleCocktail extends React.Component {
                 {' '}
                 Back to cocktails
               </Link>
-              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)} >
+              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)? <ToastSuccess /> : <ToastError/> } >
                 <FontAwesomeIcon icon={faHeart} className="heart" />
                 Add to Favourites
               </button>
@@ -120,7 +127,7 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="card mb-4" />
         </div>
-        <ToastContainer position={toast.POSITION.TOP_RIGHT}/>
+        {/* <ToastContainer position={toast.POSITION.TOP_RIGHT}/> */}
       </div>
     );
   }
