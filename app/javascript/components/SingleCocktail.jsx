@@ -115,7 +115,7 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="card mb-4" />
         </div>
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
+        <ToastContainer position={toast.POSITION.TOP_RIGHT}/>
       </div>
     );
   }
