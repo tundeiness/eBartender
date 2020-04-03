@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Heading from './Heading';
+import { ToastSuccess, ToastError } from './notify/index';
 
 
 
@@ -57,10 +58,14 @@ class SingleCocktail extends React.Component {
     })
       .then(response => {
         if (response.ok) {
-          toast.success('Added to your favourite Cocktails');
+          // toast.success('Added to your favourite Cocktails');
+          <ToastSuccess/>
           return response.json();
         }
-        throw new Error(toast.error('This Cocktail exist in your list, choose another one'));
+        throw new Error(
+          <ToastError/>
+          // toast.error('This Cocktail exist in your list, choose another one')
+          );
       })
       .then(()=> {response})
       .catch(error => { error } );

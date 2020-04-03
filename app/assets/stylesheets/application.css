@@ -758,3 +758,10 @@ button.login > a {
   background-color: transparent !important;
   text-transform: uppercase !important;
 }
+
+Toast{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
