@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Heading from './Heading';
-// import { ToastSuccess, ToastError } from './notify/index';
+ import { ToastSuccess, ToastError } from './notify/index';
 
 
 
@@ -59,16 +59,9 @@ class SingleCocktail extends React.Component {
       .then(response => {
         if (response.ok) {
           toast.success('Added to your favourite Cocktails');
-          // this.setState({
-          //   showSuccessAlert: true
-          // });
-
           return response.json();
         }
         throw new Error(
-          // this.setState({
-          //   showFailAlert: true
-          // })
            toast.error('This Cocktail exist in your list, choose another one')
           );
       })
@@ -85,6 +78,7 @@ class SingleCocktail extends React.Component {
 
 
   render() {
+    // const { cocktail, errorMsg, successMsg, handleAddToFavourite } = this.props;
     const { cocktail } = this.state;
 
     return (

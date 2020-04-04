@@ -26,7 +26,7 @@ export const DangerNotification = () => {
   )
 }
 
-export const ToastSuccess = () => {
+export const ToastSuccess = (msg) => {
 
   return(
     <>
@@ -35,13 +35,13 @@ export const ToastSuccess = () => {
           <img src='../../assets/check.svg' className='rounded mr-2' alt=''/>
           <strong>Success</strong>
         </Toast.Header>
-        <Toast.Body> Cocktail Added Successfully!!</Toast.Body>
+        <Toast.Body> { msg }</Toast.Body>
       </Toast>
     </>
   )
 }
 
-export const ToastError = () => {
+export const ToastError = (msg) => {
 
   return(
     <>
@@ -50,7 +50,7 @@ export const ToastError = () => {
           <img src='../../assets/error.svg' className='rounded mr-2' alt=''/>
           <strong>Error</strong>
         </Toast.Header>
-        <Toast.Body> This Cocktail Exist in your list!!</Toast.Body>
+        <Toast.Body> {msg} </Toast.Body>
       </Toast>
     </>
   )

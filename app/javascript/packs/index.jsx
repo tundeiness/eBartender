@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-import '../stylesheets/index.css';
+// import '../stylesheets/index.css';
 import Display from '../containers/Display';
 import { createStore } from 'redux';
 import rootReducers from '../reducers/index'
@@ -32,6 +32,12 @@ const STATES = {
     email: 'joomla@example.com',
   },
   userFavourites: [{}],
+//   singleCocktail:{
+//     name: 'Pink negroni',
+//     description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
+//     ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
+//     picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
+// }
 };
 
 const store = createStore(rootReducers, STATES);
