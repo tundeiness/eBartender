@@ -1,0 +1,405 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap');
+
+#row-one {
+  padding-top: 3rem;
+}
+
+#header-logo{
+  margin-top: .7rem;
+  margin-left: 1.4rem;
+}
+
+#rowone{
+  padding-top: 6rem;
+}
+
+#rowthree{
+  padding-top: 1rem;
+}
+
+
+
+#rowfour{
+  padding-top: 1rem;
+}
+
+#rowfive{
+  padding-top: 1rem;
+  text-decoration: none;
+}
+
+a{
+  display: inline-block;
+  text-transform: capitalize !important;
+  color: white !important;
+  font-size: .8rem;
+  font-weight: bolder;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding-top: .3rem;
+  height: 28px;
+}
+
+a:last-child{
+  background-color: gray;
+  border-radius:1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+}
+
+a:hover{
+  text-decoration: none !important;
+
+}
+
+#row-two{
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+  margin-left: 1.2rem;
+}
+
+a.start-free{
+  display: inline-block;
+  color: white !important;
+  background-color: #eb5537;
+  border-radius:1rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  border: none;
+  font-weight: bolder;
+  font-size: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .7rem;
+  height: 35px;
+
+}
+
+#footer-logo{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#row-three{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: grey;
+  font-family: 'Open Sans', sans-serif;
+  font-size: small;
+}
+
+#address, #copyright{
+  text-align: center;
+}
+
+
+
+
+/* Sign up styling */
+
+#column-two{
+  margin-top:6rem;
+}
+
+
+form{
+  padding-left: 2rem;
+  padding-right:2rem;
+  margin-top: 3rem;
+  margin-bottom: 5.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+}
+
+
+input[type=text], input[type=email] {
+  color: black;
+  text-align: center;
+  border-radius: 1rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  line-height: 1.5;
+}
+
+input[type=text], input[type=password]:focus {
+  border: 1px solid #eb5537;
+  outline: none;
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid grey;
+}
+
+input[type=password] {
+  color: #eb5537;
+  text-align: center;
+  border-radius: 1rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+
+input[type=text], input[type=email], input[type=password]{
+  margin-bottom: 1.7rem;
+}
+
+input[type=email]:valid {
+  border-color: green;
+  outline: none;
+}
+
+input[type=email]:invalid {
+  border: 1px solid red;
+  outline: none;
+}
+
+.login{
+  padding-bottom: 8.2rem;
+}
+
+
+
+/* Dashboard */
+
+
+#fave{
+  display: inline-block;
+  height: 1.5rem !important;
+  text-transform: capitalize !important;
+  color: white !important;
+  font-size: .8rem;
+  font-weight: bolder;
+  margin-right: 0 !important;
+  margin-top: 0rem !important;
+  margin-left:.45rem;
+  padding-top: .3rem;
+  padding-bottom: 1.5rem !important;
+  text-transform: uppercase !important;
+}
+
+.dashboard{
+  background-color: gray;
+  border-radius:1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  color: white;
+  height: 1.3rem;
+  font-size: .8rem;
+}
+
+.date, .message{
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+div#dash-content > a {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    padding-left: 1rem;
+    border: none;
+}
+
+
+
+/* Cocktails */
+
+#view,  #favourite{
+  display: inline-block;
+  background-color: #eb5537;
+  border-radius: 1rem;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  border: none;
+}
+
+.heart{
+  margin-right: .4rem;
+}
+
+.angle-left{
+  margin-right: .3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.link-wrapper{
+  background-color: #eb5537;
+  border-radius: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  border: none;
+  width: 100%;
+  display: block;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  line-height: 0;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.list-heading{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button.link-wrapper > a {
+  width: 100%;
+}
+
+/* SingleCocktail */
+
+.content-wrapper{
+  border: none;
+  outline: none;
+}
+
+#content-card{
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+#addToFave{
+  background-color: #eb5537;
+  border-radius: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  border: none;
+  width: 100%;
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  line-height: 0;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+  color: white;
+
+}
+
+#backButton{
+  background-color: #eb5537;
+  border-radius: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  border: none;
+  width: 100%;
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  line-height: 0;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.single-heading{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.single-sub-heading{
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+
+.single-cocktail-date{
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+
+/* UserFave */
+
+.dashboard{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+#remove-fave-wrapper{
+
+  background-color: #eb5537;
+  border-radius: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  border: none;
+  width: 100%;
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  line-height: 0;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+#remove-fave{
+  background-color: #eb5537;
+  border-radius: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  border: none;
+  width: 100%;
+  display: block;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  line-height: 0;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+#userfave-btn{
+  display: inline-block;
+  color: white !important;
+  background-color: #eb5537;
+  border-radius:1rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  border: none;
+  font-weight: bolder;
+  font-size: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .7rem;
+  height: 35px;
+  text-transform: uppercase !important;
+}
+
+#userfave-btn-card{
+  text-transform: uppercase !important;
+  background-color: #eb5537;
+  font-weight: bolder;
+}
+
+
+/* Home */
+
+
+.twitter{
+ color: #3aaff1
+}
+
+.instagram{
+  color: #24739E
+}
+
+.facebook{
+ color: #27569c
+}
+
+.twitter, .instagram, .facebook:hover{
+  cursor: pointer;
+}
+
+button{
+  border: none;
+  outline: none !important;
+}

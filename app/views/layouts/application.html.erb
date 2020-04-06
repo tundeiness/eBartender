@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>EBartender</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%# <%= javascript_pack_tag 'index' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <% if user_signed_in? %>
+        <div class='alternatives'>
+            <%= yield %>
+        </div>
+    <% else %>
+        <div class='app-wrapper d-flex flex-column justify-content-center'>
+             <p class="notice"><%= notice %></p>
+             <p class="alert"><%= alert %></p>
+            <%= yield %>
+        </div>
+    <% end %>
+</body>
+
 </html>

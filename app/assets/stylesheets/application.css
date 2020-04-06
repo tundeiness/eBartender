@@ -10,6 +10,331 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
+ *= require bootstrap
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ /* SIGNUP */
+
+ .main-wrapper{
+  background-image: url('https://user-images.githubusercontent.com/25479050/76873043-87f62180-686d-11ea-929c-542c5a0f2f6d.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+
+.subhead{
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: light;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.heading{
+ color: #000;
+ line-height: 1.5;
+ font-weight: bold;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 1.5rem;
+ letter-spacing: .4rem;
+
+}
+
+footer{
+  background-color: #fff;
+}
+
+
+#row-one {
+  padding-top: 3rem;
+}
+
+#header-logo{
+  margin-left: 1.4rem;
+}
+
+#rowone{
+  padding-top: 6rem;
+}
+
+#rowthree{
+  padding-top: 1rem;
+}
+
+
+#rowfour{
+  padding-top: 1rem;
+}
+
+#rowfive{
+  padding-top: 1rem;
+  text-decoration: none;
+}
+
+.login{
+  background-color: transparent !important;
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+button.login > a {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
+.login:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-up{
+    background-color:#eb5537 !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none !important;
+    line-height: 1.5;
+    border-radius: 1rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+
+button.sign-up > a{
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  padding-left: .8rem;
+  padding-right: .8rem;
+}
+
+.sign-up:hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+a:hover{
+  text-decoration: none !important;
+}
+
+#row-two{
+  margin-top: 7.5rem;
+  margin-bottom: 7.5rem;
+  margin-left: 1.2rem;
+}
+
+
+#footer-logo{
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#row-three{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: grey;
+  font-family: 'Open Sans', sans-serif;
+  font-size: small;
+}
+
+#address, #copyright{
+  text-align: center;
+}
+
+
+
+.twitter{
+  color: #3aaff1
+ }
+
+ .instagram{
+   color: #24739E
+ }
+
+ .facebook{
+  color: #27569c
+ }
+
+ .twitter, .instagram, .facebook:hover{
+   cursor: pointer;
+ }
+
+ button {
+   border: none;
+   outline: none !important;
+ }
+
+i {
+  display: inline-block;
+}
+
+
+/* SIGN IN */
+
+div.actions > input[value="Log in"]{
+  margin-top: .8rem;
+}
+
+
+/* SIGN UP */
+
+.app-wrapper{
+  background-image: url('https://user-images.githubusercontent.com/25479050/76873043-87f62180-686d-11ea-929c-542c5a0f2f6d.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form{
+  margin-top: 3rem;
+  margin-bottom: 2.65rem;
+  overflow-y: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+div.app-wrapper > h2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+
+form.new_user {
+  text-align: center;
+}
+
+div.app-wrapper > a {
+  text-align: center;
+  display: none;
+}
+
+div.field {
+  margin-top: 1.05rem;
+}
+
+div.field > input {
+  border-radius: 1rem;
+  outline: none;
+  border: 1px solid grey;
+  padding-top: .35rem;
+  padding-bottom: .35rem;
+  padding-right: .2rem;
+  padding-left:.2rem;
+}
+
+input[type=text], input[type=email] {
+  color: black;
+  text-align: center;
+  line-height: 1.5;
+}
+
+input[type=text], input[type=password]:focus {
+  border: 1px solid #eb5537;
+  outline: none;
+}
+
+input[type=password] {
+  color: #eb5537;
+  text-align: center;
+  border-radius: 1rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+
+input[type=email]:valid {
+  border-color: green;
+  outline: none;
+}
+
+input[type=email]:invalid {
+  border: 1px solid red;
+  outline: none;
+}
+
+div.actions{
+  margin-top: 3rem;
+}
+
+div.actions > input {
+    background-color:#eb5537 !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none !important;
+    line-height: 1.5;
+    border-radius: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    color: #fff;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+div.field > label {
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+
+/* Cocktail listing Page */
+
+/* dashboard */
+
+div.alternatives > button {
+  background-color: transparent !important;
+}
+
+div.alternatives > button > a {
+  text-transform: uppercase !important;
+}
+
+
+/* Notices & Alerts */
+
+div.alternatives > p.notice {
+  color: #fff;
+  font-size: .8rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 0rem !important;
+}
+
+
+div.alternatives{
+  height: 0;
+}
+
+div.alternatives > button.logout {
+ position: relative;
+ top: .7rem;
+}
+
+
