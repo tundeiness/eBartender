@@ -2,7 +2,7 @@
 import React from 'react';
 import Cocktails from '../containers/CocktailList';
 import Footer from './Footer';
-import Heading from './Heading';
+import { Heading } from './Heads';
 
 
 

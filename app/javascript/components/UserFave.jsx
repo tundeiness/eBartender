@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import FaveHeading from './FaveHeading';
+import { FaveHeading } from './Heads';
 
 class UserFave extends React.Component {
   constructor(props) {
