@@ -82,7 +82,7 @@ class SingleCocktail extends React.Component {
     return (
       <div className="d-flex flex-column content-wrapper">
           <Heading />
-            {/* { this.state.showSuccessAlert && <ToastSuccess/> }
+            { /* TODO { this.state.showSuccessAlert && <ToastSuccess/> }
             { this.state.showFailAlert && <ToastError/> } */}
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
@@ -119,7 +119,6 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="card mb-4" />
         </div>
-        {/* <ToastContainer position={toast.POSITION.TOP_RIGHT}/> */}
       </div>
     );
   }
