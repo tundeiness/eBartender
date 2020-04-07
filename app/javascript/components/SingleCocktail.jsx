@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Heading from './Heading';
- import { ToastSuccess, ToastError } from './notify/index';
+// TODO import { ToastSuccess, ToastError } from './notify/index';
 
 
 
@@ -17,8 +17,6 @@ class SingleCocktail extends React.Component {
     super(props);
 
     this.state = { cocktail: '',
-    // showSuccessAlert: false,
-    // showFailAlert: false
    };
 
     this.handleAddToFavourite = this.handleAddToFavourite.bind(this);
@@ -78,7 +76,7 @@ class SingleCocktail extends React.Component {
 
 
   render() {
-    // const { cocktail, errorMsg, successMsg, handleAddToFavourite } = this.props;
+    // TODO const { cocktail, errorMsg, successMsg, handleAddToFavourite } = this.props;
     const { cocktail } = this.state;
 
     return (
@@ -131,7 +129,6 @@ SingleCocktail.defaultProps = {
   match: {},
   params: {},
   id: 1,
-  handleLogout: () => {},
   push: () => {},
 };
 
@@ -139,7 +136,6 @@ SingleCocktail.defaultProps = {
 SingleCocktail.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.instanceOf(Function),
-  handleLogout: PropTypes.instanceOf(Function),
   match: PropTypes.instanceOf(Object),
   params: PropTypes.instanceOf(Object),
   id: PropTypes.number,
