@@ -60,7 +60,7 @@ class CocktailList extends React.Component {
             </div>
           </main>
         </div>
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
+        <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
       </div>
     );
   }

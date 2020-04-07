@@ -17,13 +17,13 @@ const STATES = {
     name: 'Mudslide',
     description: 'Share this creamy adults-only drink with the chocolate lover in your life. For extra indulgence, grate over some chocolate before serving',
     ingredients: 'Dark Chocolate, Ice, Vodka, Irish cream liqueur, double cream',
-    picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/mudslide.jpg?itok=okmSynXY',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/mudslide.jpg?itok=okmSynXY',
   },
   {
     name: 'Pink negroni',
     description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
     ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
-    picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
   },
   ],
   currUser: {
@@ -32,13 +32,13 @@ const STATES = {
   },
   userFavourites: [{}],
 
-  //TODO
-  // singleCocktail:{
-  //   name: 'Pink negroni',
-  //   description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
-  //   ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
-  //   picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
-  // }
+
+  // TODO singleCocktail:{
+  // TODO  name: 'Pink negroni',
+  //TODO   description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
+  // TODO  ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
+  // TODO  image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
+  // TODO }
 };
 
 const store = createStore(rootReducers, STATES);
