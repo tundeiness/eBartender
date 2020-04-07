@@ -111,7 +111,7 @@ class SingleCocktail extends React.Component {
                 {' '}
                 Back to cocktails
               </Link>
-              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)? <ToastSuccess /> : <ToastError/> } >
+              <button type="button" id="addToFave" onClick={() => this.handleAddToFavourite(cocktail)}>
                 <FontAwesomeIcon icon={faHeart} className="heart" />
                 Add to Favourites
               </button>
