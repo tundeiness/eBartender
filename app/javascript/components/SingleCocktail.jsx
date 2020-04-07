@@ -6,7 +6,7 @@ import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Heading from './Heading';
+import { Heading } from './Heads';
 // TODO import { ToastSuccess, ToastError } from './notify/index';
 
 
