@@ -8,8 +8,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Display from '../containers/Display';
-import { createStore } from 'redux';
-import rootReducers from '../reducers/index'
+// import { createStore } from 'redux';
+import rootReducers from '../reducers/index';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose  } from 'redux';
 
 
 const STATES = {
@@ -41,7 +43,11 @@ const STATES = {
   // TODO }
 };
 
-const store = createStore(rootReducers, STATES);
+ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(rootReducers, STATES,
+composeEnhancers(applyMiddleware(thunk)));
+// const store = createStore(rootReducers,  STATES);
 
 
 document.addEventListener('DOMContentLoaded', () => {

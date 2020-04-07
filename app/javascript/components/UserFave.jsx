@@ -98,7 +98,7 @@ class UserFave extends React.Component {
     const noFavouriteCocktail = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
         <h4>
-          No cocktail exist in your list yet. Why not take a look at our current list of cocktails
+          No cocktail exist in your list yet. Why not take a look at our current list of cocktails?
           {' '}
           <Link to="/dashboard" id="userfave-btn">Home</Link>
         </h4>

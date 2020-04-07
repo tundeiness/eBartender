@@ -1,19 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCocktails, favouriteCocktails } from '../actions/index';
+import { loadCocktails } from '../actions/index';
 import Cocktails from '../components/CocktailList';
 
 
 class CocktailList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cocktails: [],
-    };
+    this.getThecocktails = this.getThecocktails.bind(this);
   }
 
 
-  componentDidMount() {
+  getThecocktails(){
+    const { getDbCocktails } = this.props
+
     const url = "/api/v1/cocktails";
     fetch(url)
       .then(response => {
@@ -22,13 +23,20 @@ class CocktailList extends React.Component {
         }
         throw new Error("Network response was not ok.");
       })
-      .then(response => this.setState({ cocktails: [...response.data], }))
+      .then(
+        response => getDbCocktails(response.data)
+      )
       .catch(error => error);
-}
+  }
+
+  componentDidMount() {
+    this.getThecocktails();
+	}
 
 
   render() {
-    const { cocktails } = this.state;
+    const { cocktails } = this.props;
+    console.log("default Cocktail state", cocktails)
 
     return (
       <div>
@@ -45,10 +53,12 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  getDbCocktails: cocktails => dispatch(getCocktails(cocktails)),
-  favouriteCocktails: filter => dispatch(favouriteCocktails(filter)),
+  getDbCocktails: cocktails => dispatch(loadCocktails(cocktails)),
 });
 
+CocktailList.propTypes = {
+  cocktails: PropTypes.instanceOf(Object).isRequired,
+  getDbCocktails: PropTypes.instanceOf(Function).isRequired,
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);
+ export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);
