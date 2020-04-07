@@ -15,7 +15,6 @@ class UserFave extends React.Component {
       userFavourites: [],
     };
     this.handleRemoveFromFavourite = this.handleRemoveFromFavourite.bind(this);
-    this.redirect = this.redirect.bind(this);
   }
 
   componentDidMount() {
@@ -30,9 +29,13 @@ class UserFave extends React.Component {
       })
       .then(response => this.setState({ userFavourites: [...response.data],}))
       .catch(error => error);
+
   }
 
+
+
   handleRemoveFromFavourite(id) {
+
     const URL = `/api/v1/favourite_cocktails/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
@@ -46,23 +49,21 @@ class UserFave extends React.Component {
       .then(response => {
         if (response.ok) {
           toast.success('Successfully removed');
+          this.setState({
+            userFavourites: userFavourites.filter(fave => fave.id !== id),
+          });
           return response.json();
         }
-        throw new Error(toast.error('Something Happened'));
+        throw new Error(toast.error('This Cocktail no longer exist in your list'));
       })
       .then(() => { this.redirect() } )
       .catch(error => error);
-      this.redirect();
+
   }
 
-  redirect() {
-    const { history } = this.props;
-    history.push('/dashboard');
-  }
 
   render() {
     const { userFavourites } = this.state;
-
     const allUserFavouritesCocktails = userFavourites.map(faves => (
       <div key={faves.id} className="col-md-6 col-lg-4">
         <div className="card mb-4">

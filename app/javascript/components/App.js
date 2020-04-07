@@ -21,6 +21,7 @@ class App extends React.Component {
             <Route exact path="/cocktails" component={Cocktails} />
             <Route path="/userfave" exact component={Userfaves} />
             <Route path="/singlecocktail/:id" exact component={SingleCocktail} />
+            {/* TODO <Route path="*" component={NotFound} status={404} /> */}
           </Switch>
         </div>
         </Router>
