@@ -21,9 +21,8 @@ class CocktailList extends React.Component {
   render() {
     const { cocktails } = this.props;
 
-
-    const allCocktails = cocktails.map(cocktail => (
-      <div key={cocktail.id} className="col-md-6 col-lg-4 mb-4">
+    const allCocktails = cocktails.map((cocktail, idx) => (
+      <div key={idx} className="col-md-6 col-lg-4 mb-4">
         <div className="card mb-4" style={{ height: '26rem' }}>
           <img
             src={cocktail.image}

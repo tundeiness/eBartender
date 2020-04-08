@@ -32,6 +32,12 @@ class UserFave extends React.Component {
 
   }
 
+  // handleClick(id) {
+  //   const { handleRemoveFromFavourite } = this.props;
+  //   handleRemoveFromFavourite(id);
+  // }
+
+
 
 
   handleRemoveFromFavourite(id) {

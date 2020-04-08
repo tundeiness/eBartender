@@ -29,18 +29,18 @@ class CocktailList extends React.Component {
       .catch(error => error);
   }
 
+
   componentDidMount() {
     this.getThecocktails();
 	}
 
 
   render() {
-    const { cocktails } = this.props;
-    console.log("default Cocktail state", cocktails)
+    const {cocktails} = this.props;
 
     return (
       <div>
-        <Cocktails cocktails={cocktails} />
+        <Cocktails  cocktails={cocktails} />
       </div>
     );
   }
