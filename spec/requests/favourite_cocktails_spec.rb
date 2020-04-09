@@ -20,98 +20,69 @@ RSpec.describe Api::V1::FavouriteCocktailsController, type: :request do
 
       before { post '/api/v1/favourite_cocktails', params: valid_params }
 
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
-      end
-
       it 'returns a created status' do
         expect(response).to have_http_status(:created)
       end
 
     end
 
+    context "success" do
+      it "adds a favourite cocktail" do
+      expect { post '/api/v1/favourite_cocktails', params: valid_params  }.to change(FavouriteCocktail, :count).by(+1)
+      end
+    end
+
   end
 
   describe 'GET all favourite cocktails' do
 
-    let!(:users) { FactoryBot.create(:user) }
-    let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
-    let(:cocktail_id) { cocktails.first.id }
+    let(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
+    # let(:user) { favourite_cocktail.user }
+    let!(:user) { FactoryBot.create(:user) }
+
 
 
     before do
-      sign_in users
+      sign_in user
       get '/api/v1/favourite_cocktails'
     end
 
-    it 'returns HTTP status 200' do
-      expect(response).to have_http_status 200
+    context 'when favourite_cocktail exist' do
+      it 'returns HTTP status 200' do
+        expect(response).to have_http_status 200
+      end
+
+      it 'returns favourite_cocktails page' do
+        expect(response.body).to include("/packs-test/js/index-e3172d307c05939491ea.js")
+      end
     end
-  end
+
+    end
 
 
 
   describe 'DELETE /api/v1/favourite_cocktails/:id' do
-    # let!(:users) { FactoryBot.create(:user) }
-    # let!(:cocktails) { FactoryBot.create(:cocktail) }
-    # let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
-    # let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
-    # let(:cocktail_id) { favourite_cocktail.first.id }
-    # { build :article, title: 'article title', author: author }
-    # candidate = create(:candidate, term: term)
-
-    # def create_cocktails(x)
-    #   x.times.map { |i| create :cocktail, idx: i }
-    #   let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10, cocktail: cocktails) }
-    # end
-
-    # let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10, user: users, cocktail: cocktails) }
-
-    # let(:user) { FactoryBot.create(:user) }
-    # let(:cocktails) { FactoryBot.create(:cocktail) }
-    # let(:favourite_cocktail) { FactoryBot.create(user: user, cocktails: cocktails) }
-    # let(:cocktail_id) { favourite_cocktail.first.id }
-
-
-    # let(:favourite_cocktail) { FactoryBot.create }
-    # let(:favourite_cocktail) { FactoryBot.create(cocktails: cocktails) }
-    # let(:user) { favourite_cocktail.user }
-    # let(:cocktail_id) { favourite_cocktail.first.id }
-
-
-    # user = create(:user)
-    # foobar = create(:foobar)
-    # blogs = create_list(:blog, 5, user: user, foobar: foobar)
-
-    # before do
-    #   sign_in user
-    # end
 
     let(:favourite_cocktail) { FactoryBot.create(:favourite_cocktail) }
     let(:user) { favourite_cocktail.user }
-# sign in the user
 
     before do
       sign_in user
     end
 
-    it 'returns status code 204' do
-      delete "/api/v1/favourite_cocktails/#{favourite_cocktail.cocktail.id}"
-      expect(response).to have_http_status(204)
+    context "Delete" do
+      it 'returns status code 204' do
+        delete "/api/v1/favourite_cocktails/#{favourite_cocktail.cocktail.id}"
+        expect(response).to have_http_status(204)
+      end
     end
 
-    # before { delete "/api/v1/favourite_cocktails/#{cocktail_id}" }
+    context "success" do
+      it "deletes a favourite cocktail" do
+      expect { delete "/api/v1/favourite_cocktails/#{favourite_cocktail.cocktail.id}" }.to change(FavouriteCocktail, :count).by(-1)
+      end
+    end
 
-    # # thing = create(:thing)
-    # # delete '/things', :thing => { :id => thing.id'}
-
-    # it 'returns status code 204' do
-    #   expect(response).to have_http_status(204)
-    # end
   end
-
-
-
-
 
 end
