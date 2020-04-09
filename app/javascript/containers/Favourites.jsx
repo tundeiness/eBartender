@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import { favouriteCocktails } from '../actions/index';
-import Cocktails from '../components/CocktailList';
+// import Cocktails from '../components/CocktailList';
 import { getFavouriteCocktails } from '../actions/index';
 import UserFave from '../components/UserFave';
 
@@ -14,13 +14,13 @@ class Favourites extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.loadFavourites = this.loadFavourites.bind(this);
-    this.handleRemoveFromFavourite = this.handleRemoveFromFavourite.bind(this);
-  }
-
+    this.handleRemoveFavourite = this.handleRemoveFavourite.bind(this);
   // handleChange() {
   //   const { getFaveData } = this.props;
   //   getFaveData();
   // }
+  }
+
 
   loadFavourites(){
     const { getDbFavourite } = this.props;
@@ -56,7 +56,7 @@ class Favourites extends React.Component {
 
   }
 
-  handleRemoveFromFavourite(id) {
+  handleRemoveFavourite(id) {
 
     const URL = `/api/v1/favourite_cocktails/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
@@ -87,8 +87,8 @@ class Favourites extends React.Component {
 
   render() {
     // const { userFaves } = this.props;
-    const { favourite } = this.props;
-    console.log("My faves =>", favourite);
+    const { favourites } = this.props;
+    console.log("My faves =>", favourites);
     // const favs = (
     //   <ul className="cocktail-body">
     //     {favourite
@@ -99,7 +99,7 @@ class Favourites extends React.Component {
 
     return (
       <div>
-        <UserFave favourite={favourite} />
+        <UserFave favourites={favourites} />
       </div>
       // <div>
       //   <header className="d-flex pb-4 pt-2 mb-5">
@@ -110,13 +110,15 @@ class Favourites extends React.Component {
     );
   }
 }
+
+
 const mapStateToProps = state => ({
-  favourite: state.favourite,
+  favourite: state.favourites,
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  getDbFavourite: favourite => dispatch(getFavouriteCocktails(favourite)),
+  getDbFavourite: favourites => dispatch(getFavouriteCocktails(favourites)),
 });
 
 
@@ -124,7 +126,7 @@ Favourites.propTypes = {
   favourite: PropTypes.instanceOf(Object).isRequired,
   // getFaveData: PropTypes.instanceOf(Function).isRequired,
   loadFavourites: PropTypes.instanceOf(Function).isRequired,
-  handleRemoveFromFavourite: PropTypes.instanceOf(Function).isRequired,
+  handleRemoveFavourite: PropTypes.instanceOf(Function).isRequired,
 };
 
 

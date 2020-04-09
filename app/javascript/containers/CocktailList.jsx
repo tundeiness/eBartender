@@ -48,7 +48,7 @@ class CocktailList extends React.Component {
 
 const mapStateToProps = state => ({
   cocktails: state.cocktails,
-  current_user: state.current_user,
+  // current_user: state.current_user,
 });
 
 
