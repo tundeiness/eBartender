@@ -36,9 +36,10 @@ RSpec.describe Api::V1::FavouriteCocktailsController, type: :request do
 
   describe 'GET all favourite cocktails' do
 
-    let(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
-    # let(:user) { favourite_cocktail.user }
+    let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
+    let(:favourite_cocktail_id) { :favourite_cocktail.first.id }
     let!(:user) { FactoryBot.create(:user) }
+
 
 
 
@@ -53,7 +54,7 @@ RSpec.describe Api::V1::FavouriteCocktailsController, type: :request do
       end
 
       it 'returns favourite_cocktails page' do
-        expect(response.body).to include("/packs-test/js/index-e3172d307c05939491ea.js")
+        expect(response.content_type).to eq("text/html; charset=utf-8")
       end
     end
 

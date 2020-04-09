@@ -8,7 +8,9 @@ module Api
         @favouritecocktail = current_user.cocktails
 
         if user_signed_in? && @favouritecocktail
-          render json: {status: 'SUCCESS', message: 'Loading all Favourite Cocktails', data: @favouritecocktail}, status: :ok
+          render json: {status: 'SUCCESS', message: 'Loading all Favourite
+          Cocktails', data: @favouritecocktail}, status: :ok
+
         else
           render json: {}, status: 401
         end
