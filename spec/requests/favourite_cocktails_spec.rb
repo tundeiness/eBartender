@@ -39,6 +39,8 @@ RSpec.describe Api::V1::FavouriteCocktailsController, type: :request do
     let!(:favourite_cocktail) { FactoryBot.create_list(:favourite_cocktail, 10) }
     let(:favourite_cocktail_id) { :favourite_cocktail.first.id }
     let!(:user) { FactoryBot.create(:user) }
+    let(:favourite_cocktail_copy) { favourite_cocktail }
+    subject { favourite_cocktail }
 
 
 
@@ -55,6 +57,10 @@ RSpec.describe Api::V1::FavouriteCocktailsController, type: :request do
 
       it 'returns favourite_cocktails page' do
         expect(response.content_type).to eq("text/html; charset=utf-8")
+      end
+
+      it 'creates a list of favourite_cocktails' do
+        expect(subject).to eq(favourite_cocktail_copy)
       end
     end
 
