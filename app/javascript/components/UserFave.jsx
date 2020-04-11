@@ -32,12 +32,6 @@ class UserFave extends React.Component {
 
   }
 
-  // handleClick(id) {
-  //   const { handleRemoveFromFavourite } = this.props;
-  //   handleRemoveFromFavourite(id);
-  // }
-
-
 
 
   handleRemoveFromFavourite(id) {
@@ -69,6 +63,7 @@ class UserFave extends React.Component {
 
 
   render() {
+
     const { userFavourites } = this.state;
     const allUserFavouritesCocktails = userFavourites.map(faves => (
       <div key={faves.id} className="col-md-6 col-lg-4">

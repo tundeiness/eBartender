@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Heading } from './Heads';
-// TODO import { ToastSuccess, ToastError } from './notify/index';
+
 
 
 
@@ -76,14 +76,12 @@ class SingleCocktail extends React.Component {
 
 
   render() {
-    // TODO const { cocktail, errorMsg, successMsg, handleAddToFavourite } = this.props;
+
     const { cocktail } = this.state;
 
     return (
       <div className="d-flex flex-column content-wrapper">
           <Heading />
-            { /* TODO { this.state.showSuccessAlert && <ToastSuccess/> }
-            { this.state.showFailAlert && <ToastError/> } */}
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
           <div className="card mb-4" style={{ width: '25rem' }} id="content-card">

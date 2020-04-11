@@ -8,7 +8,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Display from '../containers/Display';
-// import { createStore } from 'redux';
 import rootReducers from '../reducers/index';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose  } from 'redux';
@@ -32,22 +31,19 @@ const STATES = {
     username: 'joomla',
     email: 'joomla@example.com',
   },
-  userFavourites: [{}],
-
-
-  // TODO singleCocktail:{
-  // TODO  name: 'Pink negroni',
-  //TODO   description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
-  // TODO  ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
-  // TODO  image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
-  // TODO }
+  favourites: [{
+    name: 'Pink negroni',
+    description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
+    ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
+  },
+  ]
 };
 
  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = createStore(rootReducers, STATES,
-composeEnhancers(applyMiddleware(thunk)));
-// const store = createStore(rootReducers,  STATES);
+const store = createStore(rootReducers, STATES, composeEnhancers(applyMiddleware(thunk)));
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

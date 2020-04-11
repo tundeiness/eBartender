@@ -1,13 +1,17 @@
-import { FAVOURITE_COCKTAILS_REQ } from '../actions/actionTypes';
+import { GET_FAVOURITE_COCKTAILS_REQ } from '../actions/actionTypes';
 
-const favouriteCocktailsReducer = (state = [], action) => {
+const favouriteCocktailsReducer = (state = null, action) => {
   switch(action.type) {
-      case FAVOURITE_COCKTAILS_REQ:
-          return action.favourites;
-
+      case GET_FAVOURITE_COCKTAILS_REQ:
+        return {
+          ...state,
+          favourites: action.payload
+        }
       default:
           return state;
   }
 }
+
+
 
 export default favouriteCocktailsReducer;
