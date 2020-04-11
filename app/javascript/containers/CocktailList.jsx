@@ -37,8 +37,7 @@ class CocktailList extends React.Component {
 
   render() {
     const {cocktails} = this.props;
-    const {faves} = this.props;
-    console.log("Faves =>", faves);
+
 
     return (
       <div>
