@@ -91,13 +91,6 @@ footer{
   color: #fff !important;
 }
 
-button.login > a {
-  font-family: 'Source Sans Pro', sans-serif !important;
-  font-size: .8rem;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: bold;
-}
 
 .login:hover{
   text-decoration: none;
@@ -201,8 +194,70 @@ form.new_user {
 
 div.app-wrapper > a {
   text-align: center;
-  display: none;
+  /* display: none; */
 }
+
+
+
+
+
+div.app-wrapper > a[href="/users/sign_up"]{
+    background-color: #eb5537 !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none !important;
+    line-height: 1.5;
+    border-radius: 1rem;
+    padding-top: .5rem;
+    padding-bottom: 1.5rem;
+    color: #fff;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: bold;
+    text-transform: uppercase !important;
+    font-size: .8rem;
+    /* width: 7rem; */
+    margin: 0 auto;
+    height: 0rem !important;
+    position: relative;
+    top: -5rem;
+}
+
+
+div.app-wrapper > a[href="/users/sign_in"]{
+  background-color: #eb5537 !important;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none !important;
+  line-height: 1.5;
+  border-radius: 1rem;
+  padding-top: .5rem;
+  padding-bottom: 1.5rem;
+  color: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  text-transform: uppercase !important;
+  font-size: .8rem;
+  /* width: 7rem; */
+  margin: 0 auto;
+  height: 0rem !important;
+  position: relative;
+  top: -5rem;
+}
+
+div.app-wrapper > a[href="/users/password/new"]{
+ display: none;
+}
+
+
+
+
+
 
 div.field {
   margin-top: 1.05rem;
@@ -757,6 +812,12 @@ cursor: pointer;
 button.login > a {
   background-color: transparent !important;
   text-transform: uppercase !important;
+  color: #eb5537 !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-size: .9rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
 }
 
 .notice{
@@ -765,7 +826,6 @@ button.login > a {
 }
 
 .alert{
-
   text-transform: uppercase;
   font-size: .9rem;
   font-weight: 800;
@@ -774,4 +834,47 @@ button.login > a {
   top: 8rem;
   display: inline-block;
 
+}
+
+#error_explanation{
+ /* margin-top: -1rem; */
+}
+
+.ul_error{
+  margin-bottom: 0 !important;
+}
+
+
+.li_error{
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.ul_error > li {
+  list-style-type: none;
+}
+
+.error_heading{
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.li_error:nth-child(5) {
+  display: none;
+}
+
+.li_error:nth-child(1) {
+  display: none;
+}
+
+.li_error:nth-child(4) {
+  display: none;
+}
+
+.field_with_errors{
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: 600;
 }
