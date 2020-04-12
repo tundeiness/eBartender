@@ -27,10 +27,7 @@ const STATES = {
     image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
   },
   ],
-  currUser: {
-    username: 'joomla',
-    email: 'joomla@example.com',
-  },
+  currUser: { },
   favourites: [{
     name: 'Pink negroni',
     description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',

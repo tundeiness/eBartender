@@ -759,9 +759,19 @@ button.login > a {
   text-transform: uppercase !important;
 }
 
-Toast{
-  position: absolute;
-  top: 0;
-  right: 0;
+.notice{
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
+.alert{
+
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  top: 8rem;
+  display: inline-block;
+
+}

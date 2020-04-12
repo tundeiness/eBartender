@@ -3,14 +3,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/index';
+import Cocktails from '../components/CocktailList';
 
 
 class Users extends React.Component {
   constructor(props) {
     super(props);
+
+    this.getTheUsers=this.getTheUsers.bind(this);
   }
 
-  componentDidMount() {
+
+  getTheUsers(){
     const { theUser } = this.props;
 
     const url = "/api/v1/users";
@@ -25,8 +29,13 @@ class Users extends React.Component {
       .catch(error => error);
   }
 
+  componentDidMount() {
+    this.getTheUsers();
+  }
+
   render() {
     const { currUser } = this.props;
+    console.log("USER=>", currUser)
     return (
       <div className="current_user pt-1 pb-1 pl-5">
         { currUser ? (
@@ -36,6 +45,7 @@ class Users extends React.Component {
             { currUser.username }
           </h6>
         ) : 'No current user yet'}
+        <Cocktails currUser = {currUser}/>
       </div>
     );
   }

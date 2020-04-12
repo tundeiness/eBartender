@@ -19,7 +19,8 @@ class CocktailList extends React.Component {
 
 
   render() {
-    const { cocktails } = this.props;
+    const { cocktails, currUser } = this.props;
+    console.log("USER=>", currUser)
 
     const allCocktails = cocktails.map((cocktail, idx) => (
       <div key={idx} className="col-md-6 col-lg-4 mb-4">
