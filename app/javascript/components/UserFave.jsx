@@ -15,6 +15,7 @@ class UserFave extends React.Component {
       userFavourites: [],
     };
     this.handleRemoveFromFavourite = this.handleRemoveFromFavourite.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   componentDidMount() {
@@ -52,6 +53,10 @@ class UserFave extends React.Component {
           this.setState({
             userFavourites: userFavourites.filter(faves => faves.id !== id),
           });
+          const faveLength = this.state.userFavourites.length
+          if (faveLength === 0){
+            this.redirect()
+          }
 
           return response.json();
         }
@@ -60,6 +65,11 @@ class UserFave extends React.Component {
       .then(() => { this.redirect() } )
       .catch(error => error);
 
+  }
+
+  redirect() {
+    const { history } = this.props;
+    history.push('/dashboard');
   }
 
 
