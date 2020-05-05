@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 class CocktailList extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class CocktailList extends React.Component {
 
 
   render() {
+
     const { cocktails, currUser } = this.props;
     console.log("USER=>", currUser)
 

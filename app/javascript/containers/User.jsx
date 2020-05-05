@@ -18,7 +18,7 @@ class Users extends React.Component {
     const { theUser } = this.props;
 
     const url = "/api/v1/users";
-    fetch(url, theUser)
+    fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -34,8 +34,8 @@ class Users extends React.Component {
   }
 
   render() {
-    const { currUser } = this.props;
-    console.log("USER=>", currUser)
+    const { user } = this.props;
+    console.log("USER=>", user)
     return (
       <div className="current_user pt-1 pb-1 pl-5">
         { currUser ? (
@@ -45,14 +45,14 @@ class Users extends React.Component {
             { currUser.username }
           </h6>
         ) : 'No current user yet'}
-        <Cocktails currUser = {currUser}/>
+        <Cocktails currUser = {user}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  currUser: state.currUser,
+  user: state.user,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -62,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
 
 Users.propTypes = {
   theUser: PropTypes.instanceOf(Function).isRequired,
-  currUser: PropTypes.instanceOf(Object).isRequired,
+  // currUser: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);

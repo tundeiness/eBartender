@@ -37,6 +37,7 @@ RSpec.describe Api::V1::CocktailsController, type: :request do
       end
 
     end
+
   end
 
 
