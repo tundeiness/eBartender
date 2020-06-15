@@ -130,7 +130,9 @@ Distributed under the MIT License. See [LICENSE](https://opensource.org/licenses
 <!-- CONTACT -->
 ## Contact
 
-Tunde Oretade - [@tundeiness](https://twitter.com/tundeiness)
+Twitter - [@tundeiness](https://twitter.com/tundeiness)
+Email - [tundeiness@yahoo.co.uk](tundeines@yahoo.co.uk)
+LinkedIn - [Tunde Oretade](https://www.linkedin.com/in/tunde-oretade/)
 
 <!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
@@ -138,7 +140,7 @@ Tunde Oretade - [@tundeiness](https://twitter.com/tundeiness)
 
 - [Font Awesome](https://fontawesome.com)
 - [Alexey Savitskiy](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
-- [kim-daniels](https://unsplash.com)
+- [Kim-daniels](https://unsplash.com)
 
 <!-- https://github.com/tundeiness/tipsy_bartender -->
 
