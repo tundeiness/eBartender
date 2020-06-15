@@ -6,10 +6,7 @@ const loadCocktails=(cocktails)=> {
 }
 
 
-const getFavouriteCocktails=(favourites)=> {
-  return { type: GET_FAVOURITE_COCKTAILS_REQ, favourites: favourites }
-}
-
+const getFavouriteCocktails = favourites => ({ type: GET_FAVOURITE_COCKTAILS_REQ, favourites });
 
 
 const getUser=(user)=> {
