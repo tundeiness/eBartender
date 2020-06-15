@@ -139,7 +139,7 @@ Distributed under the MIT License. See
 
 ## Future Improvements
 
-# [ checkbox:unchecked ] Admin Panel to add new cocktails for user
+* [ ] Admin Panel to add new cocktails for user
 
 
 ## Acknowledgements
