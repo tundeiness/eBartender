@@ -39,11 +39,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the frontend part of the Microverse Bootcamp Capstone project named eBARTENDER. Consideration is given to making it a responsive, mobile-first app with a Ruby on Rails RESTful API at the back-end and ReactJS for the front-end.
-When a user hit the link, they are presented with option of logging in as a
-previous user or sign up afresh. Once done the user is presented with a list of
-curated Cocktails from different part of the world. A user can add the Cocktail
-as part of favourite cocktail and from there they can get the recipe in case
+This is a Microverse Bootcamp Final Capstone project named eBARTENDER. Consideration is given to making it a responsive, mobile-first app with a Ruby on Rails RESTful API at the back-end and ReactJS for the front-end.
+When a user navigates to the app, they are presented with option of either logging in as a
+previous user or signing up as a new user. Once done the user is presented with a list of
+curated Cocktails from different part of the world. A user can add a Cocktail
+as part of favourite cocktail list and from there they can get the recipe in case
 they want to prepare such cocktail at home. If the user is bored with the
 current favourite cocktail list, they can remove it from their list of
 favourites and move on to select new ones. The app is tested with RSpec and uses PostgreSQL as the main
@@ -81,31 +81,31 @@ To get a local copy up and running follow these simple steps.
 git clone git@github.com:tundeiness/eBartender.git
 ```
 
-2. install dependencies by running
+2. Install dependencies by running
 
 ```sh
 yarn install  --check-files
 ```
 
-3. create database
+3. Create database
 
 ```sh
 rails db:create
 ```
 
-4. migrate the database
+4. Migrate the database
 
 ```sh
 rails db:migrate
 ```
 
-5. seed the database
+5. Seed the database
 
 ```sh
 rails db:seed
 ```
 
-6. run the app in a local server:
+6. Run the app in a local server:
 
 ```sh
 rails server
