@@ -113,8 +113,7 @@ rails server
 
 ## Contributing
 
-Contribution to make this project better are appreciated and can be done
-following this steps:
+Contributions to make this project better are appreciated and can be done by following these steps:
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
