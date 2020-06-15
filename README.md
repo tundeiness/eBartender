@@ -130,9 +130,9 @@ Distributed under the MIT License. See [LICENSE](https://opensource.org/licenses
 <!-- CONTACT -->
 ## Contact
 
-Twitter - [@tundeiness](https://twitter.com/tundeiness)
-Email - [tundeiness@yahoo.co.uk](tundeines@yahoo.co.uk)
-LinkedIn - [Tunde Oretade](https://www.linkedin.com/in/tunde-oretade/)
+- Twitter - [@tundeiness](https://twitter.com/tundeiness)
+- Email - [tundeiness@yahoo.co.uk](tundeines@yahoo.co.uk)
+- LinkedIn - [Tunde Oretade](https://www.linkedin.com/in/tunde-oretade/)
 
 <!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
