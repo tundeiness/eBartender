@@ -1,28 +1,24 @@
 /* eslint-disable no-useless-constructor */
 import React from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/index';
+import Cocktails from '../components/CocktailList';
 
 
 class Users extends React.Component {
   constructor(props) {
     super(props);
+
+    this.getTheUsers=this.getTheUsers.bind(this);
   }
 
-  componentDidMount() {
+
+  getTheUsers(){
     const { theUser } = this.props;
 
-
-    // axios.get('/api/v1/users', { theUser }, { withCredentials: true })
-    //   .then(res => {
-    //     theUser(res.data);
-    //   })
-    //   .catch(error => error);
-
     const url = "/api/v1/users";
-    fetch(url, theUser)
+    fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -33,8 +29,13 @@ class Users extends React.Component {
       .catch(error => error);
   }
 
+  componentDidMount() {
+    this.getTheUsers();
+  }
+
   render() {
-    const { currUser } = this.props;
+    const { user } = this.props;
+    console.log("USER=>", user)
     return (
       <div className="current_user pt-1 pb-1 pl-5">
         { currUser ? (
@@ -44,13 +45,14 @@ class Users extends React.Component {
             { currUser.username }
           </h6>
         ) : 'No current user yet'}
+        <Cocktails currUser = {user}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  currUser: state.currUser,
+  user: state.user,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -60,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
 
 Users.propTypes = {
   theUser: PropTypes.instanceOf(Function).isRequired,
-  currUser: PropTypes.instanceOf(Object).isRequired,
+  // currUser: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);

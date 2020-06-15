@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 class CocktailList extends React.Component {
   constructor(props) {
     super(props);
@@ -19,10 +20,14 @@ class CocktailList extends React.Component {
 
 
   render() {
-    const { cocktails } = this.props;
 
-    const allCocktails = cocktails.map(cocktail => (
-      <div key={cocktail.id} className="col-md-6 col-lg-4 mb-4">
+    const { cocktails, currUser, favourites } = this.props;
+    console.log("USER=>", currUser)
+
+    console.log('test data =>',favourites)
+
+    const allCocktails = cocktails.map((cocktail, idx) => (
+      <div key={idx} className="col-md-6 col-lg-4 mb-4">
         <div className="card mb-4" style={{ height: '26rem' }}>
           <img
             src={cocktail.image}
@@ -60,7 +65,7 @@ class CocktailList extends React.Component {
             </div>
           </main>
         </div>
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
+        <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
       </div>
     );
   }

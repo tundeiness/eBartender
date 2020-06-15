@@ -19,8 +19,9 @@
         </div>
     <% else %>
         <div class='app-wrapper d-flex flex-column justify-content-center'>
-             <p class="notice"><%= notice %></p>
-             <p class="alert"><%= alert %></p>
+             <%# <p class="notice"><%= notice %>
+             <%# </p> %>
+             <span class="alert "><%= alert %></span>
             <%= yield %>
         </div>
     <% end %>

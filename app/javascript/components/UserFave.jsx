@@ -3,15 +3,9 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import styling from 'styled-components';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { getCurrentDate } from '../helper/utility';
-
-const HeadingDiv = styling.div`
-background-color: #eb5537;
-height: 5rem;
-`;
+import { FaveHeading } from './Heads';
 
 class UserFave extends React.Component {
   constructor(props) {
@@ -36,9 +30,13 @@ class UserFave extends React.Component {
       })
       .then(response => this.setState({ userFavourites: [...response.data],}))
       .catch(error => error);
+
   }
 
+
+
   handleRemoveFromFavourite(id) {
+    const { userFavourites } = this.state;
     const URL = `/api/v1/favourite_cocktails/${id}`;
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
@@ -52,13 +50,21 @@ class UserFave extends React.Component {
       .then(response => {
         if (response.ok) {
           toast.success('Successfully removed');
+          this.setState({
+            userFavourites: userFavourites.filter(faves => faves.id !== id),
+          });
+          const faveLength = this.state.userFavourites.length
+          if (faveLength === 0){
+            this.redirect()
+          }
+
           return response.json();
         }
-        throw new Error(toast.error('Something Happened'));
+        throw new Error(toast.error('This Cocktail no longer exist in your list'));
       })
       .then(() => { this.redirect() } )
       .catch(error => error);
-      this.redirect();
+
   }
 
   redirect() {
@@ -66,7 +72,9 @@ class UserFave extends React.Component {
     history.push('/dashboard');
   }
 
+
   render() {
+
     const { userFavourites } = this.state;
 
     const allUserFavouritesCocktails = userFavourites.map(faves => (
@@ -103,7 +111,7 @@ class UserFave extends React.Component {
     const noFavouriteCocktail = (
       <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
         <h4>
-          No cocktail exist in your list yet. Why not take a look at our current list of cocktails
+          No cocktail exist in your list yet. Why not take a look at our current list of cocktails?
           {' '}
           <Link to="/dashboard" id="userfave-btn">Home</Link>
         </h4>
@@ -113,18 +121,7 @@ class UserFave extends React.Component {
     return (
 
       <>
-        <HeadingDiv className="d-flex flex-row justify-content-between ">
-          <div className="d-flex flex-column">
-            <p className="single-cocktail-date ml-3 mt-4">
-              {' '}
-              {/* {getCurrentDate('-')} */}
-              {' '}
-            </p>
-          </div>
-          <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
-            <Link className="faves pr-md-3" id="fave" to="/dashboard">Dashboard</Link>
-          </div>
-        </HeadingDiv>
+        <FaveHeading/>
         <div className="container py-5 text-center">
           <p className="lead text-muted">
             Here are the list of your recent favourite cocktails

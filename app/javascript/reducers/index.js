@@ -6,7 +6,7 @@ import favouriteCocktailsReducer from './favouriteCocktails';
 const rootReducer = combineReducers({
   cocktails: cocktailReducer,
   currUser: userReducer,
-  userFavourites: favouriteCocktailsReducer,
+  favourites: favouriteCocktailsReducer,
 });
 
 export default rootReducer;

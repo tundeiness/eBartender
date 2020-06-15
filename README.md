@@ -12,7 +12,7 @@
     Final capstone project of Microverse Software Development Bootcamp, developed with Ruby on Rails, ReactJS, React Router, Redux, and Bootstrap.
     <br />
     <br />
-    <a href="https://pedantic-mahavira-56d4dd.netlify.com">View Demo</a>
+    <a href="https://gentle-harbor-14657.herokuapp.com">View Demo</a>
     ·
     <a href="https://github.com/tundeiness/eBartender/issues">Report Bug</a>
     ·
@@ -28,7 +28,6 @@
 - [About The Project](#about-the-project)
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Contributing](#contributing)
 - [License](#license)
@@ -40,11 +39,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the frontend part of the Microverse Bootcamp Capstone project named eBARTENDER. Consideration is given to making it a responsive, mobile-first app with a Ruby on Rails RESTful API at the back-end and ReactJS for the front-end.
-When a user hit the link, they are presented with option of logging in as a
-previous user or sign up afresh. Once done the user is presented with a list of
-curated Cocktails from different part of the world. A user can add the Cocktail
-as part of favourite cocktail and from there they can get the recipe in case
+This is a Microverse Bootcamp Final Capstone project named eBARTENDER. Consideration is given to making it a responsive, mobile-first app with a Ruby on Rails RESTful API at the back-end and ReactJS for the front-end.
+When a user navigates to the app, they are presented with option of either logging in as a
+previous user or signing up as a new user. Once done the user is presented with a list of
+curated Cocktails from different part of the world. A user can add a Cocktail
+as part of favourite cocktail list and from there they can get the recipe in case
 they want to prepare such cocktail at home. If the user is bored with the
 current favourite cocktail list, they can remove it from their list of
 favourites and move on to select new ones. The app is tested with RSpec and uses PostgreSQL as the main
@@ -73,25 +72,6 @@ The frontend section of the Capstone project named eBARTENDER is built with the 
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to
-install them.
-
-* npm
-
-```sh
-npm install npm@latest -g
-```
-
-OR
-
-* yarn
-
-```sh
-yarn install
-```
-
 
 ### Installation
 
@@ -101,40 +81,34 @@ yarn install
 git clone git@github.com:tundeiness/eBartender.git
 ```
 
-2. install dependencies by running
+2. Install dependencies by running
 
 ```sh
 yarn install  --check-files
 ```
 
-3. create database
+3. Create database
 
 ```sh
 rails db:create
 ```
 
-4. migrate the database
+4. Migrate the database
 
 ```sh
 rails db:migrate
 ```
 
-5. seed the database
+5. Seed the database
 
 ```sh
 rails db:seed
 ```
 
-6. run the app in a local server:
+6. Run the app in a local server:
 
 ```sh
 rails server
-```
-
-7. Run the development server
-
-```sh
-./bin/webpack-dev-server
 ```
 
 ## Contributing
@@ -151,12 +125,14 @@ following this steps:
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](https://opensource.org/licenses/MIT)for more information.
 
 <!-- CONTACT -->
 ## Contact
 
-Tunde Oretade - [@tundeiness](https://twitter.com/tundeiness)
+Twitter - [@tundeiness](https://twitter.com/tundeiness)
+Email - [tundeiness@yahoo.co.uk](tundeines@yahoo.co.uk)
+LinkedIn - [Tunde Oretade](https://www.linkedin.com/in/tunde-oretade/)
 
 <!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
@@ -164,7 +140,7 @@ Tunde Oretade - [@tundeiness](https://twitter.com/tundeiness)
 
 - [Font Awesome](https://fontawesome.com)
 - [Alexey Savitskiy](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
-- [kim-daniels](https://unsplash.com)
+- [Kim-daniels](https://unsplash.com)
 
 <!-- https://github.com/tundeiness/tipsy_bartender -->
 

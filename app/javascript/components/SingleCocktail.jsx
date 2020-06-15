@@ -4,22 +4,20 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import styling from 'styled-components';
-import {ToastContainer, toast} from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { getCurrentDate } from '../helper/utility';
+import { Heading } from './Heads';
 
-const HeadingDiv = styling.div`
-background-color: #eb5537;
-height: 5rem;
-`;
+
+
 
 
 class SingleCocktail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { cocktail: '' };
+    this.state = { cocktail: '',
+   };
 
     this.handleAddToFavourite = this.handleAddToFavourite.bind(this);
     this.redirect = this.redirect.bind(this);
@@ -34,7 +32,6 @@ class SingleCocktail extends React.Component {
     const url = `/api/v1/cocktails/${id}`;
     fetch(url)
       .then(response => {
-        console.log(response.data);
         if (response.ok) {
           return response.json();
         }
@@ -62,10 +59,13 @@ class SingleCocktail extends React.Component {
           toast.success('Added to your favourite Cocktails');
           return response.json();
         }
-        throw new Error(toast.error('This Cocktail exist in your list, choose another one'));
+        throw new Error(
+           toast.error('This Cocktail exist in your list, choose another one')
+          );
       })
       .then(()=> {response})
       .catch(error => { error } );
+      this.redirect();
   }
 
 
@@ -76,22 +76,12 @@ class SingleCocktail extends React.Component {
 
 
   render() {
+
     const { cocktail } = this.state;
 
     return (
       <div className="d-flex flex-column content-wrapper">
-        <HeadingDiv className="d-flex flex-row justify-content-between ">
-          <div className="d-flex flex-column">
-            <p className="single-cocktail-date ml-3 mt-4">
-              {' '}
-              {/* { getCurrentDate('-') } */}
-              {' '}
-            </p>
-          </div>
-          <div className="d-flex flex-md-row flex-column ml-auto p-2 pt-md-4" id="dash-content">
-            <Link className="faves pr-md-3" id="fave" to="/userfave">My Cocktails</Link>
-          </div>
-        </HeadingDiv>
+          <Heading />
         <div className="d-flex flex-md-row flex-sm-column justify-content-between">
           <div className="card mb-4" />
           <div className="card mb-4" style={{ width: '25rem' }} id="content-card">
@@ -127,7 +117,6 @@ class SingleCocktail extends React.Component {
           </div>
           <div className="card mb-4" />
         </div>
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT}/>
       </div>
     );
   }
@@ -137,7 +126,6 @@ SingleCocktail.defaultProps = {
   match: {},
   params: {},
   id: 1,
-  handleLogout: () => {},
   push: () => {},
 };
 
@@ -145,7 +133,6 @@ SingleCocktail.defaultProps = {
 SingleCocktail.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
   push: PropTypes.instanceOf(Function),
-  handleLogout: PropTypes.instanceOf(Function),
   match: PropTypes.instanceOf(Object),
   params: PropTypes.instanceOf(Object),
   id: PropTypes.number,

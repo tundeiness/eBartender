@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { favouriteCocktails } from '../actions/index';
+import { getFavouriteCocktails } from '../actions/index';
 import Cocktails from '../components/CocktailList';
 
 
@@ -10,47 +9,60 @@ class Favourites extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
+
+    this.getTheFaves = this.getTheFaves.bind(this);
   }
 
-  handleChange() {
-    const { getFaveData } = this.props;
-    getFaveData();
+  componentDidMount() {
+    this.getTheFaves();
+	}
+
+
+
+  getTheFaves(){
+    const { favouriteCocktails } = this.props
+
+    const URL = "/api/v1/favourites_dashboard";
+    fetch(URL)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network Error.");
+      })
+      .then(response => favouriteCocktails([...response.data]))
+      .catch(error => error);
   }
 
   render() {
-    const { userFaves } = this.props;
-    const favs = (
-      <ul className="cocktail-body">
-        {userFaves
-          ? userFaves.map(fave => <Cocktails key={fave.id} fave={fave} />)
-          : 'You do not have Favourite cocktails yet'}
-      </ul>
-    );
+    const { favourites } = this.props;
+
+    console.log('test data =>',favourites)
+    // const favs = (
+    //   <ul className="cocktail-body">
+    //     {favourites
+    //       ? favourites.map(fave => <Cocktails key={fave.id} fave={fave} />)
+    //       : 'You do not have Favourite cocktails yet'}
+    //   </ul>
+    // );
     return (
       <div>
         <header className="d-flex pb-4 pt-2 mb-5">
           <h2 className=" font-weight-bold ml-2">Favourite Cocktail</h2>
         </header>
-        { favs }
+        <Cocktails favourites={favourites} />
       </div>
     );
   }
 }
 const mapStateToProps = state => ({
-  userFaves: state.favouriteCocktails,
+  favourites: state.favourites,
 });
-
-
 const mapDispatchToProps = dispatch => ({
-  favouriteCocktails: cocktails => dispatch(favouriteCocktails(cocktails)),
+  favouriteCocktails: favourites => dispatch(getFavouriteCocktails(favourites)),
 });
-
-
 Favourites.propTypes = {
-  userFaves: PropTypes.instanceOf(Object).isRequired,
-  getFaveData: PropTypes.instanceOf(Function).isRequired,
+  favourites: PropTypes.instanceOf(Object).isRequired,
+  favouriteCocktails: PropTypes.instanceOf(Function).isRequired,
 };
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(Favourites);

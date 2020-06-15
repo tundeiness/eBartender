@@ -6,10 +6,11 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../stylesheets/index.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Display from '../containers/Display';
-import { createStore } from 'redux';
-import rootReducers from '../reducers/index'
+import rootReducers from '../reducers/index';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose  } from 'redux';
 
 
 const STATES = {
@@ -17,23 +18,29 @@ const STATES = {
     name: 'Mudslide',
     description: 'Share this creamy adults-only drink with the chocolate lover in your life. For extra indulgence, grate over some chocolate before serving',
     ingredients: 'Dark Chocolate, Ice, Vodka, Irish cream liqueur, double cream',
-    picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/mudslide.jpg?itok=okmSynXY',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/mudslide.jpg?itok=okmSynXY',
   },
   {
     name: 'Pink negroni',
     description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
     ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
-    picture: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
   },
   ],
-  currUser: {
-    username: 'joomla',
-    email: 'joomla@example.com',
+  currUser: { },
+  favourites: [{
+    name: 'Pink negroni',
+    description: 'Go pink with this fabulous cocktail flavoured with pink gin, rose vermouth and Aperol. Garnish with a wedge of pink grapefruit and a basil leaf to serve',
+    ingredients: 'Pink Gin, Rose vermouth/White vermouth, Aperol, Ice, wedge of pink grapefruit, Basil leaf',
+    image: 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2019/10/classic-negroni.jpg?itok=ZQ8f0t7P',
   },
-  userFavourites: [{}],
+  ]
 };
 
-const store = createStore(rootReducers, STATES);
+ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(rootReducers, STATES, composeEnhancers(applyMiddleware(thunk)));
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

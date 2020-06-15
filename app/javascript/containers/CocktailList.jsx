@@ -1,31 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import axios from 'axios';
-import { getCocktails, favouriteCocktails } from '../actions/index';
+import { loadCocktails } from '../actions/index';
 import Cocktails from '../components/CocktailList';
 
 
 class CocktailList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cocktails: [],
-    };
+    this.getThecocktails = this.getThecocktails.bind(this);
   }
 
 
-  // componentDidMount() {
-  //   axios.get('/api/v1/cocktails', { withCredentials: true })
-  //     .then(res => {
-  //       this.setState({
-  //         cocktails: [...res.data],
-  //       });
-  //     })
-  //     .catch(error => error);
-  // }
+  getThecocktails(){
+    const { getDbCocktails } = this.props
 
-
-  componentDidMount() {
     const url = "/api/v1/cocktails";
     fetch(url)
       .then(response => {
@@ -34,17 +23,25 @@ class CocktailList extends React.Component {
         }
         throw new Error("Network response was not ok.");
       })
-      .then(response => this.setState({ cocktails: [...response.data], }))
+      .then(
+        response => getDbCocktails(response.data)
+      )
       .catch(error => error);
-}
+  }
+
+
+  componentDidMount() {
+    this.getThecocktails();
+	}
 
 
   render() {
-    const { cocktails } = this.state;
+    const {cocktails} = this.props;
+
 
     return (
       <div>
-        <Cocktails cocktails={cocktails} />
+        <Cocktails  cocktails={cocktails} />
       </div>
     );
   }
@@ -52,18 +49,17 @@ class CocktailList extends React.Component {
 
 const mapStateToProps = state => ({
   cocktails: state.cocktails,
-  current_user: state.current_user,
+  // current_user: state.current_user,
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  getDbCocktails: cocktails => dispatch(getCocktails(cocktails)),
-  favouriteCocktails: filter => dispatch(favouriteCocktails(filter)),
+  getDbCocktails: cocktails => dispatch(loadCocktails(cocktails)),
 });
 
 CocktailList.propTypes = {
-  // getDbCocktails: PropTypes.instanceOf(Function).isRequired,
-  // cocktails: PropTypes.instanceOf(Object).isRequired,
+  cocktails: PropTypes.instanceOf(Object).isRequired,
+  getDbCocktails: PropTypes.instanceOf(Function).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);
+ export default connect(mapStateToProps, mapDispatchToProps)(CocktailList);
