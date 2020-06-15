@@ -32,6 +32,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [Future Improvements](#future-improvements)
 - [Acknowledgements](#acknowledgements)
 
 
@@ -135,6 +136,11 @@ Distributed under the MIT License. See
 - LinkedIn - [Tunde Oretade](https://www.linkedin.com/in/tunde-oretade/)
 
 <!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
+
+## Future Improvements
+
+# [ checkbox:unchecked ] Admin Panel to add new cocktails for user
+
 
 ## Acknowledgements
 
