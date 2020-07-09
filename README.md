@@ -29,6 +29,7 @@
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -110,6 +111,17 @@ rails db:seed
 
 ```sh
 rails server
+```
+
+## Testing
+
+The following test suites were used to test this project:
+- RSpec
+- Factory Bot
+
+Run the test in a local server: 
+```sh
+rspec -fd
 ```
 
 ## Contributing
