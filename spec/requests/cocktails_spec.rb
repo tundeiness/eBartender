@@ -65,4 +65,52 @@ RSpec.describe Api::V1::CocktailsController, type: :request do
 
   end
 
+  describe 'POST /api/v1/cocktails' do
+    let!(:admin)        { FactoryBot.create(:admin_user) }
+    let!(:regular_user) { FactoryBot.create(:user) }
+    let(:valid_params) do
+      {
+        name:        'Margarita',
+        description: 'A classic tequila cocktail with lime juice and salt',
+        ingredients: 'Tequila, lime juice, triple sec, salt',
+        image:       'https://example.com/margarita.jpg'
+      }
+    end
+
+    context 'when an admin is signed in with valid params' do
+      before do
+        sign_in admin
+        post '/api/v1/cocktails', params: valid_params
+      end
+
+      it 'returns HTTP status 201' do
+        expect(response).to have_http_status(201)
+      end
+
+      it 'creates the cocktail record' do
+        body = JSON.parse(response.body)
+        expect(body['data']['name']).to eq('Margarita')
+      end
+    end
+
+    context 'when a non-admin authenticated user posts' do
+      before do
+        sign_in regular_user
+        post '/api/v1/cocktails', params: valid_params
+      end
+
+      it 'returns HTTP status 403' do
+        expect(response).to have_http_status(403)
+      end
+    end
+
+    context 'when the request is unauthenticated' do
+      before { post '/api/v1/cocktails', params: valid_params }
+
+      it 'returns HTTP status 401' do
+        expect(response).to have_http_status(401)
+      end
+    end
+  end
+
 end

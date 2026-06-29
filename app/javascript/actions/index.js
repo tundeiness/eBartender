@@ -1,4 +1,4 @@
-import { GET_COCKTAILS_REQ, GET_USER_REQ, GET_FAVOURITE_COCKTAILS_REQ } from './actionTypes';
+import { GET_COCKTAILS_REQ, GET_USER_REQ, GET_FAVOURITE_COCKTAILS_REQ, CREATE_COCKTAIL } from './actionTypes';
 
 
 const loadCocktails=(cocktails)=> {
@@ -14,6 +14,8 @@ const getUser=(user)=> {
 }
 
 
+const createCocktail = cocktail => ({ type: CREATE_COCKTAIL, cocktail });
+
 export {
-  loadCocktails, getUser, getFavouriteCocktails,
+  loadCocktails, getUser, getFavouriteCocktails, createCocktail,
 };

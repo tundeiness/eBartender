@@ -2,6 +2,7 @@ module Api
   module V1
     class CocktailsController < ApplicationController
       before_action :authenticate_user!
+      before_action :require_admin!, only: [:create]
       before_action :set_cocktail, only: %i[show favourite]
 
       def index
@@ -10,6 +11,15 @@ module Api
 
       def show
         render json: { status: 'SUCCESS', message: 'Showing Cocktail', data: @cocktail }, status: :ok
+      end
+
+      def create
+        @cocktail = Cocktail.new(cocktail_params)
+        if @cocktail.save
+          render json: { status: 'SUCCESS', message: 'Cocktail created', data: @cocktail }, status: :created
+        else
+          render json: { status: 'ERROR', errors: @cocktail.errors.full_messages }, status: :unprocessable_entity
+        end
       end
 
       def favourite

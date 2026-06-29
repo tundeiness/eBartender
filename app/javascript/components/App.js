@@ -5,6 +5,8 @@ import SingleCocktail from './SingleCocktail';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Userfaves from './UserFave';
+import AdminPanel from './AdminPanel';
+import Users from '../containers/User';
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer, toast} from 'react-toastify';
 
@@ -15,13 +17,14 @@ class App extends React.Component {
         <Router>
           <div>
           <ToastContainer position={toast.POSITION.BOTTOM_RIGHT}/>
+          <Users />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/dashboard" exact component={Dashboard} />
             <Route exact path="/cocktails" component={Cocktails} />
             <Route path="/userfave" exact component={Userfaves} />
             <Route path="/singlecocktail/:id" exact component={SingleCocktail} />
-            {/* TODO <Route path="*" component={NotFound} status={404} /> */}
+            <Route path="/admin" exact component={AdminPanel} />
           </Switch>
         </div>
         </Router>

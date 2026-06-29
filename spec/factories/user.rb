@@ -6,6 +6,14 @@ FactoryBot.define do
     password_confirmation { 'foobar' }
   end
 
+  factory :admin_user, class: User do
+    username { Faker::Internet.username(specifier: 5..20) }
+    email { Faker::Internet.safe_email }
+    password { 'foobar' }
+    password_confirmation { 'foobar' }
+    admin { true }
+  end
+
   factory :random_user, class: User do
     username { Faker::Internet.username(specifier: 5..20) }
     email { Faker::Internet.safe_email }

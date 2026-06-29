@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+
+  def require_admin!
+    render json: { error: 'Forbidden' }, status: :forbidden unless current_user&.admin?
+  end
 end

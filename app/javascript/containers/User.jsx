@@ -25,7 +25,7 @@ class Users extends React.Component {
         throw new Error("Network Error.");
       })
       .then(response => theUser(response))
-      .catch(error => error);
+      .catch(() => theUser({}));
   }
 
   componentDidMount() {
@@ -33,19 +33,7 @@ class Users extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
-    console.log("USER=>", user)
-    return (
-      <div className="current_user pt-1 pb-1 pl-5">
-        { user ? (
-          <h6>
-            Current user:
-            { ' ' }
-            { user.username }
-          </h6>
-        ) : 'No current user yet'}
-      </div>
-    );
+    return null;
   }
 }
 
@@ -60,7 +48,6 @@ const mapDispatchToProps = dispatch => ({
 
 Users.propTypes = {
   theUser: PropTypes.instanceOf(Function).isRequired,
-  // currUser: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
