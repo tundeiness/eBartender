@@ -5,10 +5,7 @@ module Api
         if user_signed_in?
           render json: {message: 'Loading all your favourite Cocktails', data: current_user.favourites}, status: :ok
         else
-          render json: {
-            status: 500,
-            errors: ['Not a single cocktail is found']
-          }
+          render json: { errors: ['Not authenticated'] }, status: :unauthorized
         end
       end
 

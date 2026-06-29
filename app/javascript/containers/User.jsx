@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getUser } from '../actions/index';
-import Cocktails from '../components/CocktailList';
 
 
 class Users extends React.Component {
@@ -25,7 +24,7 @@ class Users extends React.Component {
         }
         throw new Error("Network Error.");
       })
-      .then(response => theUser(response.data))
+      .then(response => theUser(response))
       .catch(error => error);
   }
 
@@ -38,21 +37,20 @@ class Users extends React.Component {
     console.log("USER=>", user)
     return (
       <div className="current_user pt-1 pb-1 pl-5">
-        { currUser ? (
+        { user ? (
           <h6>
             Current user:
             { ' ' }
-            { currUser.username }
+            { user.username }
           </h6>
         ) : 'No current user yet'}
-        <Cocktails currUser = {user}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user,
+  user: state.currUser,
 });
 
 const mapDispatchToProps = dispatch => ({

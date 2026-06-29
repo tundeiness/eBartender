@@ -29,21 +29,14 @@ module Api
         type = params[:type]
         if type == 'favourite'
           current_user.favourite_cocktails << @cocktail
-          render json: {
-            status: :"You favourited #{@cocktail.name}"
-          }
+          render json: { status: 'SUCCESS', message: "You favourited #{@cocktail.name}" }, status: :ok
 
         elsif type == 'unfavourite'
           current_user.favourite_cocktails.delete(@cocktail)
-          render json: {
-            status: :"Unfavourited #{@cocktail.name}"
-          }
+          render json: { status: 'SUCCESS', message: "Unfavourited #{@cocktail.name}" }, status: :ok
 
         else
-          render json: {
-            status: 500,
-            errors: ['Nothing happened.']
-          }
+          render json: { status: 'ERROR', errors: ['Nothing happened.'] }, status: :unprocessable_entity
         end
       end
 

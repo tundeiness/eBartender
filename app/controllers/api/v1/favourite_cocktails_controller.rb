@@ -5,7 +5,7 @@ module Api
 
 
       def index
-        @favouritecocktail = current_user.cocktails
+        @favouritecocktail = current_user.favourites
 
         if user_signed_in? && @favouritecocktail
           render json: {status: 'SUCCESS', message: 'Loading all Favourite
@@ -23,22 +23,20 @@ module Api
         end
 
         # fav = current_user.favourite_cocktails.new(favourite_params)
-        if fav.save!
+        if fav.save
           render json: { message: 'created' }, status: :created
         else
-          # render json: { message: 'can\'t create' }, status: 500
-          render json: { errors: fav.errors.full_messages },
-           status: :unprocessable_entity
+          render json: { errors: fav.errors.full_messages }, status: :unprocessable_entity
         end
       end
 
       def destroy
-        @favouritecocktail = current_user.favourite_cocktails.find_by!(cocktail_id: params[:id])
+        @favouritecocktail = current_user.favourite_cocktails.find_by(cocktail_id: params[:id])
         if @favouritecocktail
           @favouritecocktail.destroy
           render json: @favouritecocktail, status: 204
         else
-          render json: 'record no longer exist', status: 404
+          render json: { error: 'record no longer exists' }, status: :not_found
         end
       end
 

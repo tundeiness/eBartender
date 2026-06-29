@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 1.6'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -51,10 +51,14 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'faker'
+  gem 'factory_bot_rails', '< 6.2'
+  gem 'faker', '< 3'
   gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Pin ffi to a version compatible with Ruby 2.7
+gem 'ffi', '< 1.16'
+gem 'logger', '~> 1.5'

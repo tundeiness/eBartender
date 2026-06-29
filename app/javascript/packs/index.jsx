@@ -4,7 +4,6 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Display from '../containers/Display';
@@ -45,9 +44,7 @@ const store = createStore(rootReducers, STATES, composeEnhancers(applyMiddleware
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Router>
-      <Display store={store} />
-    </Router>,
+    <Display store={store} />,
     document.body.appendChild(document.createElement('div')),
   )
 })

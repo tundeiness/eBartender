@@ -50,7 +50,7 @@ class Favourites extends React.Component {
         <header className="d-flex pb-4 pt-2 mb-5">
           <h2 className=" font-weight-bold ml-2">Favourite Cocktail</h2>
         </header>
-        <Cocktails favourites={favourites} />
+        <Cocktails cocktails={favourites} />
       </div>
     );
   }
