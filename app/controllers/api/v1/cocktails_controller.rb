@@ -1,28 +1,15 @@
 module Api
   module V1
     class CocktailsController < ApplicationController
+      before_action :authenticate_user!
       before_action :set_cocktail, only: %i[show favourite]
 
-        # GET /cocktails
       def index
-        @cocktails = Cocktail.all
-        if @cocktails && user_signed_in?
-          render json: {status: 'SUCCESS', message: 'Loaded all Cocktails', data: @cocktails}, status: :ok
-        else
-          render json: {}, status: 401
-        end
+        render json: { status: 'SUCCESS', message: 'Loaded all Cocktails', data: Cocktail.all }, status: :ok
       end
 
       def show
-        # cocktail = Cocktail.find(params[:id])
-        if @cocktail && user_signed_in?
-          render json: {status: 'SUCCESS', message: 'Showing Cocktail', data: @cocktail}, status: :ok
-        else
-          render json: {
-            status: 500,
-            errors: ['cocktail not found']
-          }
-        end
+        render json: { status: 'SUCCESS', message: 'Showing Cocktail', data: @cocktail }, status: :ok
       end
 
       def favourite

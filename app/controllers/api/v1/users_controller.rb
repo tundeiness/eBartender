@@ -2,11 +2,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       def index
-        if user_signed_in?
-          render json: current_user
-        else
-          render json: {}, status: 401
-        end
+        render json: current_user.as_json(only: %i[id username email])
       end
     end
   end
